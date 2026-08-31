@@ -1727,14 +1727,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     (function () {
       var CALENDLY_URL = 'https://calendly.com/5-min-fare-review/5min-fare-review?hide_event_type_details=1&hide_gdpr_banner=1';
       var el = document.getElementById('calendly-inline-widget');
+      var loaded = false;
       function reinit() {
-        if (window.Calendly && el) {
+        if (loaded || !el) return;
+        loaded = true;
+        if (window.Calendly) {
           el.innerHTML = '';
           Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: el });
+        } else {
+          var s = document.createElement('script');
+          s.src = 'https://assets.calendly.com/assets/external/widget.js';
+          s.onload = function () {
+            Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: el });
+          };
+          document.head.appendChild(s);
         }
       }
-      if (document.readyState === 'complete') {
-        setTimeout(reinit, 100);
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) { obs.disconnect(); reinit(); }
+        }, { rootMargin: '200px' });
+        obs.observe(el);
       } else {
         window.addEventListener('load', function () { setTimeout(reinit, 100); });
       }
