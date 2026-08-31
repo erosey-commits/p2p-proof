@@ -1270,11 +1270,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="container">
         <p class="affiliations-bar__label">Trusted partners and accreditations</p>
         <div class="affiliations-bar__logos">
-          <img src="https://point2pointtravel.co/assets/logos/virtuoso.png"      alt="Virtuoso member"                height="70" loading="lazy">
-          <img src="https://point2pointtravel.co/assets/logos/iata.png"           alt="IATA accredited"                height="70" loading="lazy">
-          <img src="https://point2pointtravel.co/assets/logos/sabre.png"          alt="Sabre partner"                  height="70" loading="lazy">
-          <img src="https://point2pointtravel.co/assets/logos/stars.png"          alt="STARS partner"                  height="70" loading="lazy">
-          <img src="https://point2pointtravel.co/assets/logos/four-seasons.webp"  alt="Four Seasons Preferred Partner" height="70" loading="lazy">
+          <img src="/assets/logos/virtuoso.webp"     alt="Virtuoso member"                width="219" height="70" loading="lazy">
+          <img src="/assets/logos/iata.webp"          alt="IATA accredited"                width="210" height="70" loading="lazy">
+          <img src="/assets/logos/sabre.webp"          alt="Sabre partner"                  width="245" height="70" loading="lazy">
+          <img src="/assets/logos/stars.webp"          alt="STARS partner"                  width="158" height="70" loading="lazy">
+          <img src="/assets/logos/four-seasons.webp"   alt="Four Seasons Preferred Partner" width="118" height="70" loading="lazy">
         </div>
       </div>
     </section>
@@ -1758,7 +1758,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     /* Fix broken affiliation logos — serve local copies instead of missing main-site assets */
     (function () {
       var LOGO_BASE = '/assets/logos/';
-      var LOGOS = ['virtuoso.png', 'iata.png', 'sabre.png', 'stars.png', 'four-seasons.webp'];
+      var LOGOS = ['virtuoso.webp', 'iata.webp', 'sabre.webp', 'stars.webp', 'four-seasons.webp'];
       function patchLogos() {
         document.querySelectorAll('img[src*="/assets/logos/"]').forEach(function (img) {
           var file = img.src.split('/assets/logos/').pop();
