@@ -641,6 +641,14 @@
       border-top: 1px solid rgba(255,255,255,0.10);
       margin-block: 0 var(--space-6);
     }
+    .counter-aggregate {
+      margin-top: var(--space-6);
+      padding-top: var(--space-5);
+      border-top: 1px solid rgba(255,255,255,0.10);
+      font-size: var(--text-sm);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+    }
     .route-lines {
       display: flex;
       flex-direction: column;
@@ -648,17 +656,27 @@
     }
     .route-line {
       display: grid;
-      grid-template-columns: 1fr 82px 78px 72px;
-      gap: 0 var(--space-3);
-      align-items: center;
+      grid-template-columns: 1fr 82px 82px 86px;
+      gap: var(--space-2) var(--space-3);
+      align-items: start;
       font-size: 18px;
-      max-width: 480px;
+      max-width: 560px;
       margin-inline: auto;
       width: 100%;
+    }
+    .route-line__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
     .route-line__name {
       font-weight: 700;
       color: rgba(255,255,255,0.85);
+    }
+    .route-line__meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 400;
     }
     .route-line__public {
       color: rgba(255,255,255,0.30);
@@ -985,12 +1003,13 @@
       .counter-sub     { font-size: 19px; }
       .route-line {
         font-size: 22px;
-        grid-template-columns: 1fr 96px 88px 82px;
+        grid-template-columns: 1fr 96px 96px 100px;
         gap: 0 var(--space-4);
-        max-width: 600px;
+        max-width: 660px;
       }
+      .route-line__meta { font-size: 13px; }
       .route-line__our { font-size: 24px; }
-      .route-line .savings-badge { font-size: 17px; padding: 4px 15px; }
+      .route-line .savings-badge { font-size: 15px; padding: 4px 12px; }
     }
   </style>
 
@@ -1140,9 +1159,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="savings-counter-card" id="savings-counter">
           <p class="counter-eyebrow">TOTAL SAVINGS</p>
           <div class="counter-number" id="counter-value" aria-live="polite">$0</div>
-          <p class="counter-sub">Across 5 routes &middot; Business class &middot; Fully flexible</p>
+          <p class="counter-sub">Five completed bookings. Business class. Commercial desk vs public retail.</p>
           <hr class="counter-divider">
           <div class="route-lines" id="route-lines"></div>
+          <p class="counter-aggregate">Across these five completed bookings, clients kept $27,588.</p>
         </div>
         <p class="hide-on-mobile" style="text-align:center;margin-top:var(--space-8);">
           <a href="#book" class="btn btn--green btn--lg">Book a 5 Minute Fare Review &rarr;</a>
@@ -1151,8 +1171,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Q4 2026 desk inventory is open. Availability narrows as departure dates approach.
         </p>
         <p style="text-align:center;font-size:var(--text-sm);color:var(--color-muted);margin-top:var(--space-2);line-height:var(--line-height-relaxed);">
-          Business class, fully flexible. Commercial desk sourcing vs public retail, same day.<br>
-          Rates vary. Availability confirmed at time of sourcing.
+          Fares shown are the actual booked prices on the dates listed. Business class. Commercial desk vs public retail.
         </p>
       </div>
     </section>
@@ -1163,7 +1182,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div class="section-intro">
           <h2 class="heading-xl" id="two-ways-heading">Send your route. Get the real fare.</h2>
-          <p class="two-ways__subhead">SFO to Zurich, business class: $3,700 through our desk, $11,950 online.</p>
+          <p class="two-ways__subhead">Miami to London, business class: $3,700 through our desk, $7,983 online.</p>
         </div>
 
         <!-- Primary: route form -->
@@ -1183,7 +1202,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="route-form__field">
                 <label class="route-form__label" for="route-input">Route</label>
                 <input class="route-form__input" type="text" name="route" id="route-input"
-                       placeholder="SFO to Hong Kong" autocomplete="off" aria-describedby="route-hint" maxlength="200">
+                       placeholder="MIA to London" autocomplete="off" aria-describedby="route-hint" maxlength="200">
                 <span class="route-form__hint" id="route-hint" aria-live="polite"></span>
               </div>
               <div class="route-form__field">
@@ -1279,34 +1298,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- ══ TESTIMONIALS ══ -->
-    <section class="section testimonials-section" aria-labelledby="testimonials-heading">
-      <div class="container">
-        <div class="section-intro">
-          <h2 class="heading-xl" id="testimonials-heading">What clients say</h2>
-        </div>
-        <div class="testimonials-wrap">
-          <blockquote class="pull-quote">
-            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
-            <p class="pull-quote__text">For nearly 20 years Point2Point has consistently delivered outstanding service and exceptional business-class fares, especially on Emirates. They are the only travel company we trust for long-distance international travel.</p>
-            <footer class="pull-quote__byline">
-              <div>
-                <p class="pull-quote__author">South Florida Family Office COO</p>
-              </div>
-            </footer>
-          </blockquote>
-          <blockquote class="pull-quote">
-            <span class="quote-icon" aria-hidden="true">&ldquo;</span>
-            <p class="pull-quote__text">Premium service at its finest. Point2Point understands the needs of frequent business travelers perfectly.</p>
-            <footer class="pull-quote__byline">
-              <div>
-                <p class="pull-quote__author">SFO Investor</p>
-              </div>
-            </footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
 
     <!-- ══ S4 FAQ ══ -->
     <section class="section faq-section" aria-labelledby="faq-heading">
@@ -1432,7 +1423,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     (function () {
       var el = document.getElementById('counter-value');
       if (!el) return;
-      var target = 23978;
+      var target = 27588;
       var duration = 5000;
       var hasRun = false;
 
@@ -1483,11 +1474,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   (function () {
     /* ── Route data — single source of truth ── */
     var ROUTES = [
-      { market: 'mia', name: 'MIA → LHR', retail: 9798,  desk: 3700, pct: '62.2' },
-      { market: 'mia', name: 'MIA → MAD', retail: 8264,  desk: 3800, pct: '54.0' },
-      { market: 'sfo', name: 'SFO → ZRH', retail: 11950, desk: 3700, pct: '69.0' },
-      { market: 'lax', name: 'LAX → HKG', retail: 5693,  desk: 3300, pct: '42.0' },
-      { market: 'mia', name: 'MIA → EZE', retail: 6373,  desk: 3600, pct: '43.5' },
+      { market: 'mia', name: 'MIA → LHR', cabin: 'Business', type: 'Round trip', date: '12 Jun 2026', retail: 7983,  desk: 3700, saved: 4283 },
+      { market: 'mia', name: 'MIA → CDG', cabin: 'Business', type: 'One way',    date: '1 Sep 2026',  retail: 9309,  desk: 2600, saved: 6709 },
+      { market: 'mia', name: 'MIA → DXB', cabin: 'Business', type: 'Round trip', date: '30 Aug 2026', retail: 17157, desk: 7000, saved: 10157 },
+      { market: 'mia', name: 'MIA → GIG', cabin: 'Business', type: 'One way',    date: '7 Sep 2026',  retail: 4950,  desk: 2100, saved: 2850 },
+      { market: 'mia', name: 'MCO → LHR', cabin: 'Business', type: 'One way',    date: '15 Jul 2026', retail: 6189,  desk: 2600, saved: 3589 },
     ];
 
     /* ── UTM: read from URL, persist to sessionStorage ── */
@@ -1524,10 +1515,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (linesEl) {
       linesEl.innerHTML = sorted.map(function (r) {
         return '<div class="route-line">' +
-          '<span class="route-line__name">' + r.name + '</span>' +
+          '<div class="route-line__info">' +
+            '<span class="route-line__name">' + r.name + '</span>' +
+            '<span class="route-line__meta">' + r.cabin + ' &middot; ' + r.type + ' &middot; ' + r.date + '</span>' +
+          '</div>' +
           '<span class="route-line__public">' + fmtMoney(r.retail) + '</span>' +
           '<span class="route-line__our">' + fmtMoney(r.desk) + '</span>' +
-          '<span class="savings-badge">−' + r.pct + '%</span>' +
+          '<span class="savings-badge">−' + fmtMoney(r.saved) + '</span>' +
           '</div>';
       }).join('');
     }
@@ -1535,8 +1529,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     /* ── Dynamic heading ── */
     var headingEl = document.getElementById('routes-heading');
     if (headingEl) {
-      if (market === 'sfo') headingEl.textContent = 'Recent San Francisco departures';
-      else if (market === 'mia') headingEl.textContent = 'Recent Miami departures';
+      headingEl.textContent = 'Recent Miami Area Bookings';
     }
 
     /* ── Route form: pre-fill ── */
