@@ -1003,6 +1003,15 @@
 
 
 
+  <!-- GA4 cross-domain linker -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('config', 'G-28ZMRS3SKV', {
+      linker: { domains: ['point2pointtravel.co', 'proof.point2pointtravel.co'] }
+    });
+  </script>
+
   <!-- Apollo Website Tracker -->
   <script>
     function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
