@@ -1132,7 +1132,7 @@
           <p class="counter-sub">Five completed bookings. Business class. Commercial desk vs public retail.</p>
           <hr class="counter-divider">
           <div class="route-lines" id="route-lines"></div>
-          <p class="counter-aggregate">Across these five completed bookings, clients kept $27,588.</p>
+          <p class="counter-aggregate">Across these five completed bookings, clients kept $28,451.</p>
         </div>
         <p class="hide-on-mobile" style="text-align:center;margin-top:var(--space-8);">
           <a href="#book" class="btn btn--green btn--lg">Book a 5 Minute Fare Review &rarr;</a>
@@ -1152,7 +1152,7 @@
 
         <div class="section-intro">
           <h2 class="heading-xl" id="two-ways-heading">Send your route. Get the real fare.</h2>
-          <p class="two-ways__subhead">Miami to London, business class: $3,700 through our desk, $7,983 online.</p>
+          <p class="two-ways__subhead">Miami to London, business class: $3,700 through our desk, $7,983 online. Fort Lauderdale to Nice: $3,500 through our desk, $8,698 online.</p>
         </div>
 
         <!-- Primary: route form -->
@@ -1393,7 +1393,7 @@
     (function () {
       var el = document.getElementById('counter-value');
       if (!el) return;
-      var target = 27588;
+      var target = 28451;
       var duration = 5000;
       var hasRun = false;
 
@@ -1444,11 +1444,11 @@
   (function () {
     /* ── Route data — single source of truth ── */
     var ROUTES = [
-      { market: 'mia', name: 'MIA → LHR', cabin: 'Business', type: 'Round trip', date: '12 Jun 2026', retail: 7983,  desk: 3700, saved: 4283 },
-      { market: 'mia', name: 'MIA → CDG', cabin: 'Business', type: 'One way',    date: '1 Sep 2026',  retail: 9309,  desk: 2600, saved: 6709 },
-      { market: 'mia', name: 'MIA → DXB', cabin: 'Business', type: 'Round trip', date: '30 Aug 2026', retail: 17157, desk: 7000, saved: 10157 },
-      { market: 'mia', name: 'MIA → GIG', cabin: 'Business', type: 'One way',    date: '7 Sep 2026',  retail: 4950,  desk: 2100, saved: 2850 },
-      { market: 'mia', name: 'MCO → LHR', cabin: 'Business', type: 'One way',    date: '15 Jul 2026', retail: 6189,  desk: 2600, saved: 3589 },
+      { market: 'mia', name: 'MIA → LHR', cabin: 'Business', type: 'Round trip', date: 'Jun 2026', retail: 7983,  desk: 3700, saved: 4283 },
+      { market: 'mia', name: 'FLL → NCE', cabin: 'Business', type: 'One way',    date: 'May 2026', retail: 8698,  desk: 3500, saved: 5198 },
+      { market: 'mia', name: 'MIA → DXB', cabin: 'Business', type: 'Round trip', date: 'Aug 2026', retail: 17157, desk: 7000, saved: 10157 },
+      { market: 'mia', name: 'MIA → GIG', cabin: 'Business', type: 'One way',    date: 'Sep 2026', retail: 4950,  desk: 2100, saved: 2850 },
+      { market: 'mia', name: 'MIA → CDG', cabin: 'Business', type: 'One way',    date: 'Jan 2026', retail: 9363,  desk: 3400, saved: 5963 },
     ];
 
     /* ── UTM: read from URL, persist to sessionStorage ── */
