@@ -1654,7 +1654,7 @@
         if (bannerOk) bannerOk.style.display = 'none';
         if (bannerErr) bannerErr.style.display = 'none';
 
-        fetch('https://p2p-form.moe-bodner.workers.dev', {
+        fetch('/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
