@@ -22,17 +22,25 @@ export async function onRequestPost(context) {
     submitted_at: new Date().toISOString(),
   };
 
+  const fail = (stage, status) => {
+    console.error('Airtable webhook failed', stage, status);
+    return new Response(JSON.stringify({ ok: false, stage, status }), {
+      status: 502,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  };
+
+  if (!env.AIRTABLE_FORM_WEBHOOK) return fail('missing_env', 0);
+
   try {
     const res = await fetch(env.AIRTABLE_FORM_WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     });
-    if (!res.ok) {
-      console.error('Airtable webhook error', res.status, await res.text());
-    }
+    if (!res.ok) return fail('airtable_rejected', res.status);
   } catch (err) {
-    console.error('Airtable webhook fetch failed', err);
+    return fail('fetch_error', 0);
   }
 
   return new Response(JSON.stringify({ ok: true }), {
