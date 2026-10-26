@@ -121,7 +121,7 @@
     .bt-meta{font-size:12px;color:var(--muted);margin-top:2px}
     .bt-pub{color:var(--muted);text-decoration:line-through}
     .bt-saved{font-weight:700;color:var(--green)}
-    @media(max-width:519px){.col-pub{display:none}}
+    @media(max-width:519px){.bt-meta{display:none}}
     .bt-total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 0;border-top:2px solid var(--border);margin-top:4px}
     .bt-total__lbl{font-weight:700;font-size:16px}
     .bt-total__amt{font-size:22px;font-weight:800;color:var(--green)}
@@ -225,7 +225,7 @@
     <div class="container">
       <div class="hdr">
         <a href="/" aria-label="Point2Point Travel home">
-          <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="44" width="auto">
+          <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="44" width="135">
         </a>
         <a href="tel:+12124705029" class="hdr-phone" id="hdr-phone">
           <span class="hdr-phone__short">Call us</span>
@@ -292,6 +292,7 @@
               <div class="other-wrap" id="other-wrap">
                 <input type="text" id="other-input" class="form-input" placeholder="e.g. New York to Tokyo" autocomplete="off" aria-label="Your route">
               </div>
+              <span class="form-err" id="route-err">Please choose a route.</span>
             </div>
 
             <div>
@@ -300,7 +301,7 @@
               <span class="form-err" id="email-err">Please enter a valid work email.</span>
             </div>
 
-            <button type="submit" id="submit-btn" class="btn btn--blue btn--lg btn--full">Send my fare</button>
+            <button type="submit" id="submit-btn" class="btn btn--blue btn--lg btn--full">Get my fare</button>
 
             <p class="form-fine">No spam. One email with your estimate, within one business day.</p>
           </form>
@@ -396,7 +397,7 @@
           </blockquote>
           <blockquote style="border-left:3px solid var(--yellow);padding-left:16px;margin:0">
             <p style="font-size:16px;line-height:1.6;color:var(--navy);font-style:italic">"Premium service at its finest. Point2Point Travel understands the needs of frequent business travelers perfectly."</p>
-            <footer style="font-size:13px;color:var(--muted);margin-top:8px;">SFO Investor</footer>
+            <footer style="font-size:13px;color:var(--muted);margin-top:8px;">Single-Family Office Investor</footer>
           </blockquote>
 
           <div class="trust-logos" aria-label="Trusted partners and accreditations">
@@ -416,6 +417,19 @@
       <div class="container">
         <h2 class="sec-h" id="faq-h">Honest answers</h2>
         <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq0">
+              <span>Why is this cheaper? What's the catch?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-ans" id="faq0" role="region">
+              <div class="faq-ans-in">
+                Airlines give accredited agencies like ours negotiated business class fares that are never published on booking sites.
+                You fly the same seat on the same airline. Fare rules and mileage earning vary by fare, and we spell out both before you book.
+              </div>
+            </div>
+          </div>
 
           <div class="faq-item">
             <button class="faq-btn" aria-expanded="false" aria-controls="faq1">
@@ -465,7 +479,7 @@
     <section class="closing" id="closing" aria-labelledby="closing-h">
       <div class="container">
         <h2 class="closing-h" id="closing-h">Your route. The real fare.</h2>
-        <a href="#form-wrap" class="btn btn--yellow btn--lg">Send my fare</a>
+        <a href="#form-wrap" class="btn btn--yellow btn--lg">Get my fare</a>
         <div class="closing-links">
           <a href="https://calendly.com/5-min-fare-review/5min-fare-review" class="closing-link" id="cal-link">
             Prefer a call? Book 5 minutes
@@ -479,17 +493,17 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="footer-in">
-      <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="36" width="auto">
+      <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="36" width="111">
       <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
         <span>&copy; 2026 Point2Point Travel</span>
-        <a href="/privacy.html">Privacy</a>
+        <a href="https://point2pointtravel.co/privacy/">Privacy</a>
       </div>
     </div>
   </footer>
 
   <!-- Sticky bar (mobile only, shows after form scrolls out) -->
   <div class="sticky-bar hidden" id="sticky-bar" role="complementary">
-    <a href="#form-wrap" class="btn btn--blue btn--lg btn--full">Send my fare</a>
+    <a href="#form-wrap" class="btn btn--blue btn--lg btn--full">Get my fare</a>
   </div>
 
   <!-- FAQ accordion -->
@@ -563,6 +577,7 @@
             otherWrap.style.display='none';
             selRoute=v;
           }
+          document.getElementById('route-err').classList.remove('show');
           if(!started){started=true;fire('form_start');}
         });
       });
@@ -595,6 +610,13 @@
         e.preventDefault();
         var email=emailEl?emailEl.value.trim():'';
         var route=selRoute||(otherInput?otherInput.value.trim():'');
+        var routeErr=document.getElementById('route-err');
+        if(!route){
+          routeErr.classList.add('show');
+          var other=document.querySelector('.chip.is-sel[data-route="other"]');
+          (other?otherInput:chips[0]).focus();return;
+        }
+        routeErr.classList.remove('show');
         if(!validEmail(email)){
           emailEl.classList.add('err');emailErr.classList.add('show');emailEl.focus();return;
         }
@@ -618,7 +640,7 @@
           okBanner.classList.add('show');
         })
         .catch(function(){
-          btn.disabled=false;btn.textContent='Send my fare';
+          btn.disabled=false;btn.textContent='Get my fare';
           failBanner.classList.add('show');
         });
       });
