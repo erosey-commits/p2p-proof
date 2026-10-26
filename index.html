@@ -562,8 +562,9 @@
       if(params.get('utm_content'))sessionStorage.setItem('utm_content',utmCo);
 
       function fire(n,x){
-        if(typeof window.gtag!=='function')return;
-        window.gtag('event',n,Object.assign({utm_campaign:utmC,utm_content:utmCo},x||{}));
+        var p=Object.assign({utm_campaign:utmC,utm_content:utmCo},x||{});
+        if(window.zaraz&&typeof window.zaraz.track==='function'){window.zaraz.track(n,p);}
+        else if(typeof window.gtag==='function'){window.gtag('event',n,p);}
       }
 
       /* Chips */
