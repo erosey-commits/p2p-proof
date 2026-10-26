@@ -68,13 +68,13 @@
 
     /* Fare card */
     .fare-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(10,30,63,.08);margin-top:20px}
-    .fare-card__bar{background:var(--yellow);padding:9px 18px;font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em}
+    .fare-card__bar{background:var(--yellow);padding:9px 18px;font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em}
     .fare-card__body{padding:16px 18px}
     .fare-card__route{font-size:20px;font-weight:800;color:var(--navy)}
-    .fare-card__meta{font-size:12px;color:var(--muted);margin-top:2px;margin-bottom:14px}
+    .fare-card__meta{font-size:14px;color:var(--muted);margin-top:2px;margin-bottom:14px}
     .fare-card__row{display:flex;justify-content:space-between;align-items:center;padding:6px 0}
     .fare-card__row+.fare-card__row{border-top:1px solid var(--border)}
-    .fare-card__lbl{font-size:13px;color:var(--muted)}
+    .fare-card__lbl{font-size:14px;color:var(--muted)}
     .fare-card__public{font-weight:600;color:var(--muted);text-decoration:line-through;font-size:14px}
     .fare-card__desk{font-size:24px;font-weight:800;color:var(--navy)}
     .fare-card__saved{font-weight:700;color:var(--green);font-size:16px}
@@ -90,7 +90,7 @@
     .form-input{width:100%;height:52px;border:2px solid var(--border);border-radius:var(--r);padding:0 16px;font-size:16px;font-family:'DM Sans',system-ui,sans-serif;color:var(--navy);background:var(--white);outline:none;transition:border-color .12s;-webkit-appearance:none}
     .form-input:focus{border-color:var(--blue)}
     .form-input.err{border-color:#C0392B}
-    .form-err{font-size:13px;color:#C0392B;margin-top:4px;display:none}
+    .form-err{font-size:14px;color:#C0392B;margin-top:4px;display:none}
     .form-err.show{display:block}
     .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:16px;border-radius:var(--r);border:none;cursor:pointer;text-decoration:none;transition:opacity .15s;padding:0 24px}
     .btn:hover{opacity:.88}
@@ -98,7 +98,7 @@
     .btn--yellow{background:var(--yellow);color:var(--navy)}
     .btn--lg{min-height:56px;font-size:17px;padding:0 32px}
     .btn--full{width:100%}
-    .form-fine{font-size:13px;color:var(--muted);line-height:1.5;text-align:center}
+    .form-fine{font-size:14px;color:var(--muted);line-height:1.5;text-align:center}
     .form-banner{border-radius:var(--r);padding:14px 16px;font-size:15px;font-weight:500;display:none}
     .form-banner.show{display:block}
     .form-banner--ok{background:#ECFDF5;color:var(--green);border:1px solid #A7F3D0}
@@ -112,20 +112,20 @@
     /* Bookings table */
     .bt-wrap{overflow-x:auto}
     .bt{width:100%;border-collapse:collapse;font-size:15px}
-    .bt th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:0 0 12px;text-align:right;border-bottom:1px solid var(--border)}
+    .bt th{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:0 0 12px;text-align:right;border-bottom:1px solid var(--border)}
     .bt th:first-child{text-align:left}
     .bt td{padding:13px 0;border-bottom:1px solid var(--border);text-align:right;vertical-align:middle}
     .bt td:first-child{text-align:left}
     .bt tr:last-child td{border-bottom:none}
     .bt-rname{font-weight:700;color:var(--navy)}
-    .bt-meta{font-size:12px;color:var(--muted);margin-top:2px}
+    .bt-meta{font-size:14px;color:var(--muted);margin-top:2px}
     .bt-pub{color:var(--muted);text-decoration:line-through}
     .bt-saved{font-weight:700;color:var(--green)}
     @media(max-width:519px){.bt-meta{display:none}}
     .bt-total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 0;border-top:2px solid var(--border);margin-top:4px}
     .bt-total__lbl{font-weight:700;font-size:16px}
     .bt-total__amt{font-size:22px;font-weight:800;color:var(--green)}
-    .bt-note{font-size:13px;color:var(--muted);margin-top:10px}
+    .bt-note{font-size:14px;color:var(--muted);margin-top:10px}
 
     /* How it works */
     .steps{display:flex;flex-direction:column;gap:20px}
@@ -139,7 +139,7 @@
     .trust-person{display:flex;gap:16px;align-items:center}
     .trust-photo{width:68px;height:68px;min-width:68px;border-radius:50%;object-fit:cover}
     .trust-name{font-size:16px;font-weight:700;color:var(--navy)}
-    .trust-title{font-size:13px;color:var(--muted);margin-top:2px}
+    .trust-title{font-size:14px;color:var(--muted);margin-top:2px}
     .trust-logos{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
     .trust-logos img{height:32px;width:auto;filter:grayscale(1);opacity:.65}
     @media(min-width:640px){.trust-logos img{height:40px}}
@@ -158,13 +158,18 @@
     .closing{background:var(--navy);padding:56px var(--px);text-align:center}
     .closing-h{font-size:clamp(24px,4vw,36px);font-weight:800;color:var(--white);margin-bottom:24px}
     .closing-links{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:16px}
-    .closing-link{color:rgba(255,255,255,.7);font-size:15px;text-decoration:none}
+    .closing-link{color:rgba(255,255,255,.7);font-size:15px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 12px}
     .closing-link:hover{color:var(--white)}
 
     /* Footer */
     .site-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:22px var(--px)}
-    .footer-in{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.55)}
-    .footer-in a{color:rgba(255,255,255,.55);text-decoration:none}
+    .footer-in{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:14px;color:rgba(255,255,255,.55)}
+    .footer-in a{color:rgba(255,255,255,.55);text-decoration:none;display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+    .faq-ans-in a{display:inline-flex;align-items:center;min-height:44px}
+    .quotes{display:flex;flex-direction:column;gap:28px}
+    .quotes-h{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+    [data-approved="false"]{display:none}
+    .quotes:not(:has([data-approved="true"])){display:none}
     .footer-in a:hover{color:var(--white)}
 
     /* Sticky bar */
@@ -274,8 +279,9 @@
             Something went wrong. Please try again.
           </div>
 
-          <form class="hero-form" id="hero-form" novalidate aria-label="Get your fare">
+          <form class="hero-form" id="hero-form" novalidate aria-label="Get your fare" action="mailto:emmanuel@point2pointtravel.co" method="post" enctype="text/plain">
             <noscript>
+              <style>.other-wrap{display:block}</style>
               <p style="font-size:14px;color:var(--muted);margin-bottom:10px;">
                 <a href="mailto:emmanuel@point2pointtravel.co?subject=Fare%20request">Email us your route</a> and we will reply with your desk rate.
               </p>
@@ -290,7 +296,7 @@
                 <button type="button" class="chip" data-route="other">Other</button>
               </div>
               <div class="other-wrap" id="other-wrap">
-                <input type="text" id="other-input" class="form-input" placeholder="e.g. New York to Tokyo" autocomplete="off" aria-label="Your route">
+                <input type="text" id="other-input" class="form-input" name="route" placeholder="e.g. New York to Tokyo" autocomplete="off" aria-label="Your route">
               </div>
               <span class="form-err" id="route-err">Please choose a route.</span>
             </div>
@@ -301,7 +307,7 @@
               <span class="form-err" id="email-err">Please enter a valid work email.</span>
             </div>
 
-            <button type="submit" id="submit-btn" class="btn btn--blue btn--lg btn--full">Get my fare</button>
+            <button type="submit" id="submit-btn" class="btn btn--blue btn--lg btn--full">Send my fare</button>
 
             <p class="form-fine">No spam. One email with your estimate, within one business day.</p>
           </form>
@@ -391,14 +397,17 @@
             </div>
           </div>
 
-          <blockquote style="border-left:3px solid var(--yellow);padding-left:16px;margin:0">
+          <div class="quotes">
+          <h3 class="quotes-h">Point2Point Travel clients</h3>
+          <blockquote data-approved="false" style="border-left:3px solid var(--yellow);padding-left:16px;margin:0">
             <p style="font-size:16px;line-height:1.6;color:var(--navy);font-style:italic">"For nearly 20 years Point2Point has consistently delivered outstanding service and exceptional business-class fares, especially on Emirates. They are the only travel company we trust for long-distance international travel."</p>
-            <footer style="font-size:13px;color:var(--muted);margin-top:8px;">South Florida Family Office COO</footer>
+            <footer style="font-size:14px;color:var(--muted);margin-top:8px;">South Florida Family Office COO</footer>
           </blockquote>
-          <blockquote style="border-left:3px solid var(--yellow);padding-left:16px;margin:0">
+          <blockquote data-approved="false" style="border-left:3px solid var(--yellow);padding-left:16px;margin:0">
             <p style="font-size:16px;line-height:1.6;color:var(--navy);font-style:italic">"Premium service at its finest. Point2Point Travel understands the needs of frequent business travelers perfectly."</p>
-            <footer style="font-size:13px;color:var(--muted);margin-top:8px;">Single-Family Office Investor</footer>
+            <footer style="font-size:14px;color:var(--muted);margin-top:8px;">Single-Family Office Investor</footer>
           </blockquote>
+          </div>
 
           <div class="trust-logos" aria-label="Trusted partners and accreditations">
             <img src="/assets/logos/virtuoso.webp" alt="Virtuoso member" loading="lazy" width="120" height="32">
@@ -479,7 +488,7 @@
     <section class="closing" id="closing" aria-labelledby="closing-h">
       <div class="container">
         <h2 class="closing-h" id="closing-h">Your route. The real fare.</h2>
-        <a href="#form-wrap" class="btn btn--yellow btn--lg">Get my fare</a>
+        <a href="#form-wrap" class="btn btn--yellow btn--lg">Send my fare</a>
         <div class="closing-links">
           <a href="https://calendly.com/5-min-fare-review/5min-fare-review" class="closing-link" id="cal-link">
             Prefer a call? Book 5 minutes
@@ -503,7 +512,7 @@
 
   <!-- Sticky bar (mobile only, shows after form scrolls out) -->
   <div class="sticky-bar hidden" id="sticky-bar" role="complementary">
-    <a href="#form-wrap" class="btn btn--blue btn--lg btn--full">Get my fare</a>
+    <a href="#form-wrap" class="btn btn--blue btn--lg btn--full">Send my fare</a>
   </div>
 
   <!-- FAQ accordion -->
@@ -640,7 +649,7 @@
           okBanner.classList.add('show');
         })
         .catch(function(){
-          btn.disabled=false;btn.textContent='Get my fare';
+          btn.disabled=false;btn.textContent='Send my fare';
           failBanner.classList.add('show');
         });
       });
