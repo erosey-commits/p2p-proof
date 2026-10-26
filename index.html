@@ -181,13 +181,6 @@
   <!-- UTM Capture -->
   <script src="https://point2pointtravel.co/shared/utm-capture.js" defer></script>
 
-  <!-- GA4 cross-domain linker -->
-  <script>
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('config','G-28ZMRS3SKV',{linker:{domains:['point2pointtravel.co','proof.point2pointtravel.co']}});
-  </script>
-
   <!-- Apollo Website Tracker -->
   <script>
     function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
@@ -563,8 +556,7 @@
 
       function fire(n,x){
         var p=Object.assign({utm_campaign:utmC,utm_content:utmCo},x||{});
-        if(window.zaraz&&typeof window.zaraz.track==='function'){window.zaraz.track(n,p);}
-        else if(typeof window.gtag==='function'){window.gtag('event',n,p);}
+        if(window.zaraz&&typeof window.zaraz.track==='function')window.zaraz.track(n,p);
       }
 
       /* Chips */
