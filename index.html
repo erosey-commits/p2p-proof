@@ -3,1013 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Access You Can't Book Online. Here Is What It's Worth. | Point2Point Travel</title>
-  <meta name="description" content="Point2Point Travel sources business class fares through the commercial desk, a channel Navan, Concur, and Google Flights cannot see. Real routes, real rates, sourced this week.">
-  <link rel="canonical" href="https://point2pointtravel.co/proof">
+  <title>Business Class Fares No Booking Site Shows | Point2Point Travel</title>
+  <meta name="description" content="Point2Point Travel sources business class fares through the airline commercial desk. Real routes, real rates, not available on Navan, Concur, or Google Flights.">
+  <link rel="canonical" href="https://proof.point2pointtravel.co/">
   <meta name="robots" content="index, follow">
-
   <meta property="og:type"        content="website">
-  <meta property="og:title"       content="Access You Can't Book Online. Here Is What It's Worth.">
-  <meta property="og:description" content="Point2Point Travel sources business class fares through the commercial desk, a channel Navan, Concur, and Google Flights cannot see. Real routes, real rates, sourced this week.">
-  <meta property="og:url"         content="https://point2pointtravel.co/proof">
+  <meta property="og:title"       content="Business Class Fares No Booking Site Shows">
+  <meta property="og:description" content="Point2Point Travel sources business class fares through the airline commercial desk. Real routes, real rates, not available online.">
+  <meta property="og:url"         content="https://proof.point2pointtravel.co/">
   <meta property="og:site_name"   content="Point2Point Travel">
   <meta property="og:image"       content="https://point2pointtravel.co/assets/logos/p2p-logo.png">
-
   <link rel="icon"             type="image/svg+xml" href="https://point2pointtravel.co/assets/icons/favicon.svg">
   <link rel="icon"             type="image/png" sizes="32x32" href="https://point2pointtravel.co/assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="https://point2pointtravel.co/assets/icons/apple-touch-icon.png">
-
-  <link rel="stylesheet" href="https://point2pointtravel.co/shared/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
 
   <style>
-    /* ── Brand overrides for /proof, /ea, /cxo family ── */
-    :root {
-      --p-green:       #15803D;
-      --p-green-hover: #166534;
-      --p-slate:       #1E293B;
-      --p-bg-light:    #F8FAFC;
-      --p-blue-bg:     #DBEAFE;
-      --p-save-red:    #B91C1C;
-      --p-save-bg:     #FEF2F2;
-      --p-border:      #E2E8F0;
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --blue:#0B5A92;
+      --yellow:#F2C14E;
+      --navy:#0A1E3F;
+      --green:#0B6B43;
+      --ground:#F4F6FA;
+      --border:#D5DBE5;
+      --muted:#5A6A7A;
+      --white:#ffffff;
+      --r:10px;
+      --px:20px;
+      --max:1080px;
+    }
+    html{font-family:'DM Sans',system-ui,sans-serif;color:var(--navy);background:var(--white);-webkit-text-size-adjust:100%}
+    body{min-height:100vh}
+    a{color:inherit}
+    img{display:block;max-width:100%}
+    button{font-family:'DM Sans',system-ui,sans-serif;cursor:pointer}
+
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .container{max-width:var(--max);margin:0 auto;padding:0 var(--px)}
+
+    /* Header */
+    .site-header{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+    .hdr{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .site-logo img{height:44px;width:auto}
+    .hdr-phone{font-size:15px;font-weight:700;color:var(--blue);text-decoration:none;padding:8px 0;min-height:44px;display:flex;align-items:center}
+    .hdr-phone__full{display:none}
+    @media(min-width:420px){.hdr-phone__full{display:inline}.hdr-phone__short{display:none}}
+
+    /* Hero section */
+    .hero{background:var(--ground);padding:24px var(--px) 32px}
+    .hero__grid{display:grid;gap:24px;max-width:var(--max);margin:0 auto}
+    @media(min-width:768px){
+      .hero{padding:48px var(--px) 56px}
+      .hero__grid{grid-template-columns:1fr 400px;gap:56px;align-items:start}
     }
 
-    /* Nav — dark slate header */
-    .site-header {
-      background-color: var(--p-slate);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .site-logo img {
-      height: 55px;
-      width: auto;
-    }
-    .btn--header-cta {
-      background-color: #166534;
-      color: #ffffff;
-      border-color: #166534;
-    }
-    .btn--header-cta:hover {
-      background-color: #14532d;
-      border-color: #14532d;
-      color: #ffffff;
-      box-shadow: var(--shadow-md);
-    }
+    /* H1 */
+    .hero-h1{font-size:clamp(26px,5vw,44px);font-weight:800;line-height:1.12;color:var(--navy)}
+    .hero-sub{font-size:15px;color:var(--muted);line-height:1.55;margin-top:10px}
+    @media(max-width:767px){.hero-sub{display:none}}
 
-    /* Green primary button */
-    .btn--green {
-      background-color: var(--p-green);
-      color: #ffffff;
-      border-color: var(--p-green);
-    }
-    .btn--green:hover {
-      background-color: var(--p-green-hover);
-      border-color: var(--p-green-hover);
-      color: #ffffff;
-      box-shadow: var(--shadow-md);
-    }
-    .btn--green:active {
-      background-color: var(--p-green-hover);
-      box-shadow: none;
-      transform: translateY(1px);
-    }
+    /* Fare card */
+    .fare-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(10,30,63,.08);margin-top:20px}
+    .fare-card__bar{background:var(--yellow);padding:9px 18px;font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.05em}
+    .fare-card__body{padding:16px 18px}
+    .fare-card__route{font-size:20px;font-weight:800;color:var(--navy)}
+    .fare-card__meta{font-size:12px;color:var(--muted);margin-top:2px;margin-bottom:14px}
+    .fare-card__row{display:flex;justify-content:space-between;align-items:center;padding:6px 0}
+    .fare-card__row+.fare-card__row{border-top:1px solid var(--border)}
+    .fare-card__lbl{font-size:13px;color:var(--muted)}
+    .fare-card__public{font-weight:600;color:var(--muted);text-decoration:line-through;font-size:14px}
+    .fare-card__desk{font-size:24px;font-weight:800;color:var(--navy)}
+    .fare-card__saved{font-weight:700;color:var(--green);font-size:16px}
 
-    /* Navy outline button */
-    .btn--navy {
-      background-color: transparent;
-      color: var(--p-slate);
-      border-color: var(--p-slate);
-    }
-    .btn--navy:hover {
-      background-color: var(--p-slate);
-      color: #ffffff;
-    }
+    /* Form */
+    .hero-form{display:flex;flex-direction:column;gap:14px}
+    .form-lbl{font-size:14px;font-weight:600;color:var(--navy);display:block;margin-bottom:6px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--white);border:2px solid var(--border);border-radius:100px;padding:9px 16px;font-size:14px;font-weight:600;color:var(--navy);cursor:pointer;transition:border-color .12s,background .12s,color .12s;min-height:44px;display:inline-flex;align-items:center;white-space:nowrap}
+    .chip:hover{border-color:var(--blue)}
+    .chip.is-sel{background:var(--blue);border-color:var(--blue);color:var(--white)}
+    .other-wrap{margin-top:8px;display:none}
+    .form-input{width:100%;height:52px;border:2px solid var(--border);border-radius:var(--r);padding:0 16px;font-size:16px;font-family:'DM Sans',system-ui,sans-serif;color:var(--navy);background:var(--white);outline:none;transition:border-color .12s;-webkit-appearance:none}
+    .form-input:focus{border-color:var(--blue)}
+    .form-input.err{border-color:#C0392B}
+    .form-err{font-size:13px;color:#C0392B;margin-top:4px;display:none}
+    .form-err.show{display:block}
+    .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:16px;border-radius:var(--r);border:none;cursor:pointer;text-decoration:none;transition:opacity .15s;padding:0 24px}
+    .btn:hover{opacity:.88}
+    .btn--blue{background:var(--blue);color:var(--white)}
+    .btn--yellow{background:var(--yellow);color:var(--navy)}
+    .btn--lg{min-height:56px;font-size:17px;padding:0 32px}
+    .btn--full{width:100%}
+    .form-fine{font-size:13px;color:var(--muted);line-height:1.5;text-align:center}
+    .form-banner{border-radius:var(--r);padding:14px 16px;font-size:15px;font-weight:500;display:none}
+    .form-banner.show{display:block}
+    .form-banner--ok{background:#ECFDF5;color:var(--green);border:1px solid #A7F3D0}
+    .form-banner--fail{background:#FEF2F2;color:#B91C1C;border:1px solid #FECACA}
 
-    /* Ghost button on dark */
-    .btn--ghost-white {
-      background-color: transparent;
-      color: #ffffff;
-      border-color: rgba(255,255,255,0.55);
-    }
-    .btn--ghost-white:hover {
-      background-color: rgba(255,255,255,0.12);
-      border-color: #ffffff;
-      color: #ffffff;
-    }
+    /* Sections */
+    .sec{padding:52px var(--px)}
+    .sec--alt{background:var(--ground)}
+    .sec-h{font-size:clamp(22px,3.5vw,30px);font-weight:800;color:var(--navy);margin-bottom:28px}
 
-    /* Eyebrow override */
-    .eyebrow { color: var(--p-green); }
-    .eyebrow--sm {
-      font-size: 11px;
-      letter-spacing: 0.08em;
-    }
+    /* Bookings table */
+    .bt-wrap{overflow-x:auto}
+    .bt{width:100%;border-collapse:collapse;font-size:15px}
+    .bt th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:0 0 12px;text-align:right;border-bottom:1px solid var(--border)}
+    .bt th:first-child{text-align:left}
+    .bt td{padding:13px 0;border-bottom:1px solid var(--border);text-align:right;vertical-align:middle}
+    .bt td:first-child{text-align:left}
+    .bt tr:last-child td{border-bottom:none}
+    .bt-rname{font-weight:700;color:var(--navy)}
+    .bt-meta{font-size:12px;color:var(--muted);margin-top:2px}
+    .bt-pub{color:var(--muted);text-decoration:line-through}
+    .bt-saved{font-weight:700;color:var(--green)}
+    @media(max-width:519px){.col-pub{display:none}}
+    .bt-total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0 0;border-top:2px solid var(--border);margin-top:4px}
+    .bt-total__lbl{font-weight:700;font-size:16px}
+    .bt-total__amt{font-size:22px;font-weight:800;color:var(--green)}
+    .bt-note{font-size:13px;color:var(--muted);margin-top:10px}
 
-    /* ── S1 Hero ── */
-    .hero--proof {
-      background-color: var(--p-bg-light);
-      color: var(--color-navy);
-      padding-block: var(--space-16) var(--space-20);
-      text-align: center;
-    }
-    .hero--proof .hero__headline {
-      color: var(--p-slate);
-      font-size: var(--text-3xl);
-      max-width: 680px;
-    }
-    .hero--proof .hero__subhead {
-      color: var(--color-muted);
-    }
+    /* How it works */
+    .steps{display:flex;flex-direction:column;gap:20px}
+    @media(min-width:600px){.steps{flex-direction:row;gap:32px}}
+    .step{display:flex;gap:14px;align-items:flex-start;flex:1}
+    .step-n{width:40px;height:40px;min-width:40px;border-radius:50%;background:var(--blue);color:var(--white);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+    .step-t{font-size:16px;font-weight:600;color:var(--navy);padding-top:9px}
 
-    /* ── S2 Route section ── */
-    .route-section { background-color: #ffffff; }
+    /* Trust */
+    .trust-grid{display:flex;flex-direction:column;gap:28px}
+    .trust-person{display:flex;gap:16px;align-items:center}
+    .trust-photo{width:68px;height:68px;min-width:68px;border-radius:50%;object-fit:cover}
+    .trust-name{font-size:16px;font-weight:700;color:var(--navy)}
+    .trust-title{font-size:13px;color:var(--muted);margin-top:2px}
+    .trust-logos{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
+    .trust-logos img{height:32px;width:auto;filter:grayscale(1);opacity:.65}
+    @media(min-width:640px){.trust-logos img{height:40px}}
 
-    .route-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-6);
-      margin-bottom: var(--space-10);
-    }
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 0;background:none;border:none;font-size:16px;font-weight:600;color:var(--navy);text-align:left;gap:12px;min-height:44px;cursor:pointer}
+    .faq-icon{font-size:22px;font-weight:400;color:var(--blue);flex-shrink:0;transition:transform .2s;line-height:1}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-ans{height:0;overflow:hidden;transition:height .2s ease}
+    .faq-ans-in{font-size:15px;line-height:1.7;color:var(--muted);padding-bottom:18px}
 
-    .route-card {
-      background: #ffffff;
-      border: 1px solid var(--p-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-6);
-      box-shadow: 0 1px 3px rgba(30,41,59,0.04), 0 4px 12px rgba(30,41,59,0.06);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      transition: transform 200ms ease-out, box-shadow 200ms ease-out;
-    }
-    @media (hover: hover) {
-      @media (prefers-reduced-motion: no-preference) {
-        .route-card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 4px 8px rgba(30,41,59,0.06), 0 12px 24px rgba(30,41,59,0.10);
-        }
-      }
-    }
-    .route-card__name {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--p-slate);
-    }
-    .route-card__sub {
-      font-size: var(--text-sm);
-      color: var(--color-muted);
-      margin-bottom: var(--space-2);
-    }
-    .route-card__our {
-      font-size: 38px;
-      font-weight: 700;
-      color: var(--p-green);
-      line-height: 1;
-    }
-    .route-card__our-label {
-      font-size: var(--text-sm);
-      color: var(--color-muted);
-      margin-bottom: var(--space-3);
-    }
-    .route-card__public {
-      font-size: var(--text-base);
-      color: var(--color-muted);
-      text-decoration: line-through;
-    }
-    .route-card__badge {
-      display: inline-flex;
-      align-items: center;
-      margin-top: auto;
-      padding-top: var(--space-3);
-      font-size: var(--text-sm);
-      font-weight: 700;
-      color: var(--p-save-red);
-      background-color: var(--p-save-bg);
-      border-radius: var(--radius-full);
-      padding: 4px 12px;
-      align-self: flex-start;
-    }
+    /* Closing */
+    .closing{background:var(--navy);padding:56px var(--px);text-align:center}
+    .closing-h{font-size:clamp(24px,4vw,36px);font-weight:800;color:var(--white);margin-bottom:24px}
+    .closing-links{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:16px}
+    .closing-link{color:rgba(255,255,255,.7);font-size:15px;text-decoration:none}
+    .closing-link:hover{color:var(--white)}
 
-    /* Mobile table — shown on small screens */
-    .route-table-wrap { overflow-x: auto; margin-bottom: var(--space-10); }
-    .route-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: var(--text-sm);
-    }
-    .route-table th {
-      text-align: left;
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-muted);
-      padding: var(--space-3) var(--space-4);
-      border-bottom: 2px solid var(--p-border);
-      white-space: nowrap;
-    }
-    .route-table td {
-      padding: var(--space-3) var(--space-4);
-      border-bottom: 1px solid var(--p-border);
-      color: var(--p-slate);
-      vertical-align: middle;
-    }
-    .route-table .td-our {
-      font-weight: 700;
-      color: var(--p-green);
-      white-space: nowrap;
-    }
-    .route-table .td-public {
-      text-decoration: line-through;
-      color: var(--color-muted);
-      white-space: nowrap;
-    }
-    .route-table .td-savings {
-      white-space: nowrap;
-    }
-    .savings-badge {
-      display: inline-flex;
-      align-items: center;
-      background: var(--p-save-bg);
-      color: var(--p-save-red);
-      border-radius: var(--radius-full);
-      padding: 2px 10px;
-      font-size: var(--text-sm);
-      font-weight: 700;
-    }
+    /* Footer */
+    .site-footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:22px var(--px)}
+    .footer-in{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.55)}
+    .footer-in a{color:rgba(255,255,255,.55);text-decoration:none}
+    .footer-in a:hover{color:var(--white)}
 
-    /* Desktop: show cards; Mobile: show table */
-    .route-cards  { display: none; }
-    .route-table-wrap { display: block; }
-
-    /* Source callout */
-    .source-callout {
-      background-color: var(--p-blue-bg);
-      border-radius: var(--radius-lg);
-      padding: var(--space-5) var(--space-6);
-      font-size: var(--text-sm);
-      color: #1E40AF;
-      line-height: var(--line-height-relaxed);
-    }
-
-    /* ── S3 Mechanism ── */
-    .mechanism {
-      background-color: #ffffff;
-      padding-block: var(--space-12);
-    }
-    .mechanism #mechanism-heading {
-      text-align: center;
-      margin-bottom: var(--space-10);
-    }
-    /* Reduce hero bottom padding now mechanism follows immediately */
-    .hero--proof { padding-block: var(--space-12) var(--space-10); }
-
-    /* Mobile accordion */
-    .mechanism-accordion {
-      border: none;
-      background: none;
-    }
-    .mechanism-accordion summary {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: var(--space-4);
-    }
-    .mechanism-accordion summary::-webkit-details-marker { display: none; }
-    .mechanism-accordion summary .accordion-icon {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border: 2px solid var(--p-slate);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.25s ease;
-    }
-    .mechanism-accordion summary .accordion-icon svg {
-      display: block;
-      transition: transform 0.25s ease;
-    }
-    .mechanism-accordion[open] summary .accordion-icon svg {
-      transform: rotate(180deg);
-    }
-    .mechanism-accordion .mechanism-steps {
-      padding-top: var(--space-8);
-    }
-
-    @media (min-width: 769px) {
-      /* Always open on desktop — reset details to behave like a plain div */
-      .mechanism-accordion,
-      .mechanism-accordion[open] {
-        display: contents;
-      }
-      .mechanism-accordion summary {
-        display: none;
-      }
-      .mechanism-accordion .mechanism-steps {
-        padding-top: 0;
-      }
-    }
-
-    .mechanism-steps {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-10);
-      max-width: 520px;
-      margin-inline: auto;
-    }
-    .mechanism-step {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: var(--space-5);
-      align-items: start;
-      position: relative;
-    }
-    .mechanism-step:not(:last-child)::before {
-      content: '';
-      position: absolute;
-      left: 21px;
-      top: 44px;
-      bottom: calc(-1 * var(--space-10));
-      width: 2px;
-      background: rgba(30,41,59,0.15);
-    }
-    .mechanism-step__num {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-full);
-      background-color: var(--p-slate);
-      color: #ffffff;
-      font-weight: 700;
-      font-size: var(--text-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
-    }
-    .mechanism-step__title {
-      font-size: var(--text-lg);
-      font-weight: 700;
-      color: var(--p-slate);
-      margin-bottom: var(--space-2);
-    }
-    .mechanism-step__body {
-      font-size: var(--text-base);
-      color: #334155;
-      line-height: var(--line-height-relaxed);
-    }
-
-    /* ── S4 FAQ ── */
-    .faq-section { background-color: var(--p-bg-light); }
-    .faq-wrap { max-width: 760px; margin-inline: auto; }
-
-    .faq-item { border-bottom: 1px solid var(--p-border); }
-    .faq-item:first-child { border-top: 1px solid var(--p-border); }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: var(--space-6);
-      width: 100%;
-      padding-block: var(--space-5);
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: var(--p-slate);
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      font-family: inherit;
-      min-height: var(--tap-min);
-    }
-
-    .faq-icon {
-      display: inline-block;
-      font-size: 22px;
-      color: var(--p-green);
-      flex-shrink: 0;
-      line-height: 1;
-    }
-    .faq-item.is-open .faq-icon { transform: rotate(45deg); }
-
-    .faq-answer { overflow: hidden; height: 0; }
-    .faq-answer-inner {
-      padding-bottom: var(--space-5);
-      padding-right: var(--space-10);
-      font-size: var(--text-base);
-      color: var(--color-muted);
-      line-height: var(--line-height-relaxed);
-    }
-
-    /* ── S5 Dual CTA ── */
-    .dual-cta {
-      background-color: var(--p-slate);
-      padding-block: var(--space-20);
-      text-align: center;
-    }
-    .dual-cta__headline {
-      font-size: var(--text-3xl);
-      font-weight: 700;
-      color: #ffffff;
-      line-height: var(--line-height-tight);
-      max-width: 580px;
-      margin-inline: auto;
-      margin-bottom: var(--space-4);
-    }
-    .dual-cta__sub {
-      font-size: var(--text-base);
-      color: #CBD5E1;
-      margin-bottom: var(--space-8);
-    }
-    .dual-cta__buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-    .dual-cta__availability {
-      font-size: var(--text-sm);
-      color: #94A3B8;
-      margin-top: var(--space-3);
-    }
-
-    /* ── S6 Footer ── */
-    .site-footer--dark {
-      background-color: var(--p-slate);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-block: var(--space-12);
-    }
-    .footer-inner {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-6);
-    }
-    .footer-brand__name {
-      font-size: var(--text-base);
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: var(--space-1);
-    }
-    .footer-brand__sub {
-      font-size: var(--text-sm);
-      color: #94A3B8;
-      line-height: var(--line-height-relaxed);
-    }
-    .footer-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-3) var(--space-4);
-      font-size: var(--text-sm);
-      color: #94A3B8;
-    }
-    .footer-right a {
-      color: #60A5FA;
-      text-decoration: none;
-    }
-    .footer-right a:hover { text-decoration: underline; }
-    .footer-sep { color: #475569; }
-
-    /* ── Section intro ── */
-    .section-intro {
-      text-align: center;
-      margin-bottom: var(--space-12);
-    }
-    .section-intro .heading-xl { color: var(--p-slate); margin-bottom: var(--space-3); }
-    .section-intro .subhead { max-width: 560px; margin-inline: auto; }
-
-    /* ── Affiliations bar ── */
-    .affiliations-bar {
-      background-color: var(--p-bg-light);
-      border-bottom: 1px solid var(--p-border);
-      padding-block: var(--space-8) var(--space-10);
-      text-align: center;
-    }
-    .affiliations-bar__label {
-      font-size: var(--text-sm);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.10em;
-      color: var(--color-muted);
-      margin-bottom: var(--space-8);
-    }
-    .affiliations-bar__logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: var(--space-6) var(--space-10);
-    }
-    .affiliations-bar__logos img {
-      height: 75px;
-      width: auto;
-      opacity: 0.70;
-      filter: grayscale(1);
-      transition: opacity 200ms ease, filter 200ms ease;
-    }
-    @media (hover: hover) {
-      .affiliations-bar__logos img:hover { opacity: 1; filter: none; }
-    }
-
-    /* ── Testimonials ── */
-    .testimonials-section { background-color: #ffffff; }
-    .testimonials-wrap {
-      max-width: 720px;
-      margin-inline: auto;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-6);
-    }
-    .pull-quote {
-      background-color: var(--color-white);
-      border-left: 4px solid var(--p-green);
-      border-radius: 0 var(--radius-md) var(--radius-md) 0;
-      padding: var(--space-6) var(--space-8);
-      box-shadow: var(--shadow-sm);
-      flex: 1;
-    }
-    .pull-quote__text {
-      font-size: var(--text-lg);
-      line-height: var(--line-height-relaxed);
-      color: var(--color-body);
-      margin-bottom: var(--space-5);
-    }
-    .pull-quote__text::before { content: "\201C"; }
-    .pull-quote__text::after  { content: "\201D"; }
-    .pull-quote__byline {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-    .pull-quote__avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-full);
-      background: linear-gradient(135deg, var(--p-slate), var(--p-green));
-      flex-shrink: 0;
-    }
-    .pull-quote__author {
-      font-size: var(--text-sm);
-      font-weight: 700;
-      color: var(--p-slate);
-    }
-    .pull-quote__role {
-      font-size: var(--text-sm);
-      color: var(--color-muted);
-    }
-
-    /* ── Calendly section ── */
-    .calendly-section--proof {
-      background-color: var(--p-bg-light);
-      padding-block: var(--space-16);
-    }
-    .calendly-section--proof .section-intro { margin-bottom: var(--space-8); }
-    #calendly-inline-widget {
-      min-width: 320px;
-      width: 100%;
-      height: 700px;
-      border: none;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      background-color: #ffffff;
-    }
-
-    /* ── Savings counter card ── */
-    .savings-counter-card {
-      max-width: 640px;
-      margin-inline: auto;
-      background: var(--p-slate);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-lg);
-      padding: var(--space-10) var(--space-8);
-      box-shadow: 0 1px 3px rgba(30,41,59,0.04), 0 4px 12px rgba(30,41,59,0.06);
-      text-align: center;
-      transition: transform 200ms ease-out, box-shadow 200ms ease-out;
-    }
-    @media (hover: hover) {
-      @media (prefers-reduced-motion: no-preference) {
-        .savings-counter-card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 4px 8px rgba(30,41,59,0.06), 0 12px 24px rgba(30,41,59,0.10);
-        }
-      }
-    }
-    .counter-eyebrow {
-      font-size: 16px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.10em;
-      color: #22C55E;
-      margin-bottom: var(--space-4);
-    }
-    .counter-number {
-      font-size: 72px;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1;
-      margin-bottom: var(--space-4);
-      font-variant-numeric: tabular-nums;
-    }
-    .counter-sub {
-      font-size: var(--text-sm);
-      color: rgba(255,255,255,0.72);
-      margin-bottom: var(--space-6);
-    }
-    .counter-divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.10);
-      margin-block: 0 var(--space-6);
-    }
-    .counter-aggregate {
-      margin-top: var(--space-6);
-      padding-top: var(--space-5);
-      border-top: 1px solid rgba(255,255,255,0.10);
-      font-size: var(--text-sm);
-      color: rgba(255,255,255,0.55);
-      text-align: center;
-    }
-    .route-lines {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-    }
-    .route-line {
-      display: grid;
-      grid-template-columns: 1fr 82px 82px 86px;
-      gap: var(--space-2) var(--space-3);
-      align-items: start;
-      font-size: 18px;
-      max-width: 560px;
-      margin-inline: auto;
-      width: 100%;
-    }
-    .route-line__info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .route-line__name {
-      font-weight: 700;
-      color: rgba(255,255,255,0.85);
-    }
-    .route-line__meta {
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
-      font-weight: 400;
-    }
-    .route-line__public {
-      color: rgba(255,255,255,0.30);
-      text-decoration: line-through;
-      text-align: right;
-    }
-    .route-line__our {
-      font-weight: 700;
-      color: #22C55E;
-      font-size: 20px;
-      text-align: right;
-    }
-    .route-line .savings-badge {
-      background: var(--p-save-bg);
-      color: #991B1B;
-      border-radius: var(--radius-full);
-      padding: 3px 12px;
-      font-size: 14px;
-      font-weight: 700;
-      justify-self: end;
-    }
-
-    /* ── Logo pill ── */
-    .logo-pill {
-      display: inline-flex;
-      align-items: center;
-      background: #ffffff;
-      border-radius: var(--radius-full);
-    }
-    .logo-pill--lg { padding: 6px 12px; }
-    .logo-pill--sm { padding: 4px 10px; }
-
-    /* ── Quote icon ── */
-    .quote-icon {
-      display: block;
-      font-size: 52px;
-      line-height: 0.85;
-      color: #94A3B8;
-      font-family: Georgia, "Times New Roman", serif;
-      margin-bottom: var(--space-3);
-    }
-
-    /* ── Sticky mobile CTA ── */
-    .sticky-mobile-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      background: #ffffff;
-      border-top: 1px solid var(--p-border);
-      padding: var(--space-3) var(--space-4);
-      box-shadow: 0 -4px 16px rgba(30,41,59,0.12);
-    }
-
-    /* ── Responsive ── */
-    @media (min-width: 640px) {
-      .dual-cta__buttons { flex-direction: row; justify-content: center; gap: 16px; }
-    }
-
-    @media (min-width: 900px) {
-      .route-cards     { display: grid; grid-template-columns: repeat(3, 1fr); }
-      .route-table-wrap { display: none; }
-      .footer-inner    { flex-direction: row; justify-content: space-between; align-items: flex-start; }
-      .dual-cta__headline { font-size: var(--text-4xl); }
-      .hero--proof .hero__headline { font-size: var(--text-4xl); }
-      .testimonials-wrap { flex-direction: row; max-width: 100%; }
-    }
-
-    /* ── Two Ways In section ── */
-    .two-ways-section { background-color: var(--p-bg-light); scroll-margin-top: 120px; }
-    .two-ways-section .section-intro { margin-bottom: var(--space-8); }
-    .two-ways__subhead {
-      font-size: var(--text-base);
-      font-weight: 600;
-      color: var(--p-green);
-      margin-top: var(--space-3);
-    }
-    .two-ways__form-wrap {
-      max-width: 520px;
-      margin-inline: auto;
-    }
-    .two-ways__talk-microcopy {
-      text-align: center;
-      font-size: 13px;
-      color: var(--color-muted);
-      padding-top: var(--space-8);
-      margin-top: var(--space-10);
-      margin-bottom: var(--space-6);
-      border-top: 1px solid var(--p-border);
-    }
-    .two-ways__calendly-secondary {
-      max-width: 900px;
-      margin-inline: auto;
-    }
-    /* Affiliations bar — single row, no scroll */
-    .affiliations-bar { overflow: hidden !important; }
-    .affiliations-bar__logos {
-      display: flex !important;
-      flex-wrap: nowrap !important;
-      align-items: center;
-      justify-content: center;
-      gap: clamp(8px, 1.5vw, 28px);
-      overflow: hidden !important;
-      width: 100%;
-    }
-    .affiliations-bar__logos img {
-      height: clamp(28px, 3.5vw, 46px) !important;
-      width: auto !important;
-      max-width: 18% !important;
-      object-fit: contain;
-      flex-shrink: 1;
-    }
-    /* Route form */
-    .route-form { display: flex; flex-direction: column; gap: 0; }
-    .route-form__fieldset {
-      border: none;
-      padding: 0;
-      margin: 0 0 8px;
-    }
-    .route-form__legend {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--color-muted);
-      margin-bottom: 6px;
-      display: block;
-      width: 100%;
-    }
-    .route-form__field {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      margin-bottom: 6px;
-    }
-    .route-form__field:last-child { margin-bottom: 0; }
-    .route-form__label {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--p-slate);
-    }
-    .route-form__input {
-      width: 100%;
-      min-height: 36px;
-      padding: 6px 10px;
-      border: 1px solid var(--p-border);
-      border-radius: var(--radius-md);
-      font-size: var(--text-base);
-      font-family: inherit;
-      color: var(--p-slate);
-      background: #ffffff;
-      outline: none;
-      box-sizing: border-box;
-      transition: border-color 150ms ease, box-shadow 150ms ease;
-      -webkit-appearance: none;
-    }
-    .route-form__input:focus {
-      border-color: var(--p-green);
-      box-shadow: 0 0 0 3px rgba(21,128,61,0.12);
-    }
-    .route-form__input::placeholder { color: #94A3B8; }
-    /* Validation states */
-    .route-form__input[aria-invalid="true"] {
-      border-color: #DC2626;
-      box-shadow: 0 0 0 3px rgba(220,38,38,0.10);
-    }
-    .route-form__input[aria-invalid="false"] {
-      border-color: var(--p-green);
-    }
-    .route-form__hint {
-      font-size: 12px;
-      line-height: 1.4;
-      min-height: 16px;
-    }
-    .route-form__hint--error { color: #DC2626; }
-    .route-form__hint--success { color: var(--p-green); }
-    /* Submit */
-    .route-form__submit {
-      min-height: 48px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
-    .route-form__spinner {
-      display: none;
-      width: 16px;
-      height: 16px;
-      border: 2px solid rgba(255,255,255,0.35);
-      border-top-color: #ffffff;
-      border-radius: 50%;
-      animation: rf-spin 0.7s linear infinite;
-      flex-shrink: 0;
-    }
-    .route-form__submit.is-loading .route-form__spinner { display: block; }
-    @keyframes rf-spin { to { transform: rotate(360deg); } }
-    .route-form__footnote {
-      font-size: 12px;
-      color: var(--color-muted);
-      text-align: center;
-      margin-top: var(--space-3);
-      line-height: var(--line-height-relaxed);
-    }
-    /* Notification banners */
-    .route-form__banner {
-      border-radius: var(--radius-md);
-      padding: var(--space-4) var(--space-5);
-      font-size: 14px;
-      line-height: var(--line-height-relaxed);
-      margin-bottom: var(--space-5);
-      display: none;
-    }
-    .route-form__banner--success {
-      background: #F0FDF4;
-      border: 1px solid #BBF7D0;
-      color: #166534;
-    }
-    .route-form__banner--error {
-      background: #FEF2F2;
-      border: 1px solid #FECACA;
-      color: #B91C1C;
-    }
-    .route-form-confirm {
-      background: #F0FDF4;
-      border: 1px solid #BBF7D0;
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      color: #166534;
-      font-size: var(--text-base);
-      line-height: var(--line-height-relaxed);
-    }
-    /* Two-column Calendly layout */
-    .cal-two-col {
-      display: flex;
-      align-items: flex-start;
-      background: #fff;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      overflow: hidden;
-    }
-    .cal-two-col__details {
-      flex: 0 0 220px;
-      padding: var(--space-8);
-      border-right: 1px solid var(--p-border);
-    }
-    .cal-two-col__avatar {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: var(--space-3);
-      display: block;
-    }
-    .cal-two-col__host {
-      font-size: 13px;
-      color: var(--color-muted);
-      margin-bottom: var(--space-1);
-    }
-    .cal-two-col__title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--p-navy);
-      margin-bottom: var(--space-4);
-      line-height: 1.3;
-    }
-    .cal-two-col__meta {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      margin-bottom: var(--space-5);
-    }
-    .cal-two-col__meta-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--color-muted);
-    }
-    .cal-two-col__meta-item svg { flex-shrink: 0; }
-    .cal-two-col__desc {
-      font-size: 13px;
-      color: var(--color-muted);
-      line-height: 1.6;
-    }
-    .cal-two-col__widget {
-      flex: 1;
-      min-width: 0;
-    }
-    .cal-two-col__widget #calendly-inline-widget {
-      width: 100%;
-      height: 660px;
-      border: none;
-    }
-    @media (max-width: 640px) {
-      .cal-two-col { flex-direction: column; }
-      .cal-two-col__details {
-        flex: none;
-        border-right: none;
-        border-bottom: 1px solid var(--p-border);
-      }
-      .cal-two-col__widget #calendly-inline-widget { height: 750px; }
-    }
-    .route-form__privacy-note {
-      font-size: 11px;
-      color: var(--color-muted);
-      margin-top: 4px;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 767px) {
-      .sticky-mobile-cta { display: block; }
-      .hide-on-mobile { display: none !important; }
-      body { padding-bottom: 80px; }
-      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
-      .footer-right { justify-content: center; }
-    }
-
-    @media (min-width: 768px) {
-      .counter-eyebrow { font-size: 19px; }
-      .counter-number  { font-size: 86px; }
-      .counter-sub     { font-size: 19px; }
-      .route-line {
-        font-size: 22px;
-        grid-template-columns: 1fr 96px 96px 100px;
-        gap: 0 var(--space-4);
-        max-width: 660px;
-      }
-      .route-line__meta { font-size: 13px; }
-      .route-line__our { font-size: 24px; }
-      .route-line .savings-badge { font-size: 15px; padding: 4px 12px; }
-    }
+    /* Sticky bar */
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--white);border-top:1px solid var(--border);padding:10px var(--px) max(10px,env(safe-area-inset-bottom));z-index:200;display:none}
+    @media(max-width:767px){.sticky-bar{display:block}}
+    .sticky-bar.hidden{display:none!important}
   </style>
 
   <!-- UTM Capture -->
   <script src="https://point2pointtravel.co/shared/utm-capture.js"></script>
 
-
-
   <!-- GA4 cross-domain linker -->
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer=window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
-    gtag('config', 'G-28ZMRS3SKV', {
-      linker: { domains: ['point2pointtravel.co', 'proof.point2pointtravel.co'] }
-    });
+    gtag('config','G-28ZMRS3SKV',{linker:{domains:['point2pointtravel.co','proof.point2pointtravel.co']}});
   </script>
 
   <!-- Apollo Website Tracker -->
@@ -1022,268 +192,230 @@
 
   <!-- RB2B -->
   <script>
-    !function(){
-      var reb2b=window.reb2b=window.reb2b||[];
-      if(reb2b.invoked)return;
-      reb2b.invoked=true;
-      reb2b.methods=["identify","collect"];
-      reb2b.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);reb2b.push(t);return reb2b};};
-      for(var e=0;e<reb2b.methods.length;e++){var t=reb2b.methods[e];reb2b[t]=reb2b.factory(t);}
-      reb2b.load=function(key){var s=document.createElement("script");s.type="text/javascript";s.async=true;
-        s.src="https://s3-us-west-2.amazonaws.com/b2bjsstore/b/"+key+"/reb2b.js.gz";
-        var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(s,r);};
-      reb2b.SNIPPET_VERSION="1.0.1";
-      reb2b.load("VN080H3KZJ6J");
-    }();
+    !function(){var reb2b=window.reb2b=window.reb2b||[];if(reb2b.invoked)return;reb2b.invoked=true;
+    reb2b.methods=["identify","collect"];reb2b.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);reb2b.push(t);return reb2b};};
+    for(var e=0;e<reb2b.methods.length;e++){var t=reb2b.methods[e];reb2b[t]=reb2b.factory(t);}
+    reb2b.load=function(key){var s=document.createElement("script");s.type="text/javascript";s.async=true;
+    s.src="https://s3-us-west-2.amazonaws.com/b2bjsstore/b/"+key+"/reb2b.js.gz";
+    var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(s,r);};
+    reb2b.SNIPPET_VERSION="1.0.1";reb2b.load("VN080H3KZJ6J");}();
   </script>
 
+  <!-- LinkedIn Insight Tag -->
+  <script>
+    _linkedin_partner_id="8666818";
+    window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script>
+    (function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[];}
+    var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+    b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b,s);})(window.lintrk);
+  </script>
+  <noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=8666818&fmt=gif"></noscript>
 
-  <!-- Calendly init helper -->
-  <script src="https://point2pointtravel.co/shared/calendly-init.js" defer></script>
 </head>
-
 <body>
-  <a href="#main-content" class="sr-only">Skip to main content</a>
 
-  <!-- ══ NAV ══ -->
+  <a href="#main" class="sr-only">Skip to main content</a>
+
   <header class="site-header" role="banner">
     <div class="container">
-      <div class="site-header__inner">
-        <span class="site-logo">
-          <span class="logo-pill logo-pill--lg">
-            <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="46">
-          </span>
-        </span>
-        <a href="#book" class="btn btn--header-cta btn--sm hide-on-mobile">Book a 5 Minute Fare Review &rarr;</a>
+      <div class="hdr">
+        <a href="/" aria-label="Point2Point Travel home">
+          <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="44" width="auto">
+        </a>
+        <a href="tel:+12124705029" class="hdr-phone" id="hdr-phone">
+          <span class="hdr-phone__short">Call us</span>
+          <span class="hdr-phone__full">(212) 470-5029</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="main">
 
-    <!-- ══ S1 HERO ══ -->
-    <section class="hero hero--proof" aria-labelledby="proof-hero-headline">
-      <div class="container">
-        <h1 class="hero__headline heading-xl" id="proof-hero-headline">
-          Access you can't book online.<br>Here is what it's worth.
-        </h1>
-        <p class="hero__subhead" style="margin-top:var(--space-5);margin-bottom:0;">
-          The commercial desk operates on a separate tier from public booking systems.
-          The route comparisons below are what that access looks like in practice, sourced this week, same-day comparison against public retail.
-        </p>
-      </div>
-    </section>
+    <!-- SCREEN ONE -->
+    <section class="hero" aria-labelledby="hero-h1">
+      <div class="hero__grid">
 
-    <!-- ══ S3 THE MECHANISM ══ -->
-    <section class="section mechanism" aria-labelledby="mechanism-heading">
-      <div class="container">
-        <h2 class="heading-xl" id="mechanism-heading">
-          Why your booking tool cannot see these rates
-        </h2>
-        <div class="mechanism-steps">
+        <div>
+          <h1 class="hero-h1" id="hero-h1">Business class fares no booking site shows.</h1>
+          <p class="hero-sub">Point2Point Travel sources fares through the airline commercial desk. Not available on Navan, Concur, or Google Flights.</p>
 
-          <div class="mechanism-step">
-            <div class="mechanism-step__num" aria-hidden="true">1</div>
-            <div>
-              <h3 class="mechanism-step__title">Public online tools use public inventory</h3>
-              <p class="mechanism-step__body">
-                Navan, Concur, and Google Flights all access the same global distribution system.
-                Priced for volume retail.
-              </p>
+          <div class="fare-card" aria-label="Sample booking: Miami to London">
+            <div class="fare-card__bar">Recent booking</div>
+            <div class="fare-card__body">
+              <div class="fare-card__route">Miami to London</div>
+              <div class="fare-card__meta">MIA&ndash;LHR &middot; Round trip &middot; Business &middot; Jun 2026</div>
+              <div class="fare-card__row">
+                <span class="fare-card__lbl">Public fare</span>
+                <span class="fare-card__public">$7,983</span>
+              </div>
+              <div class="fare-card__row">
+                <span class="fare-card__lbl">Point2Point Travel desk</span>
+                <span class="fare-card__desk">$3,700</span>
+              </div>
+              <div class="fare-card__row">
+                <span class="fare-card__lbl">You keep</span>
+                <span class="fare-card__saved">$4,283</span>
+              </div>
             </div>
           </div>
-
-          <div class="mechanism-step">
-            <div class="mechanism-step__num" aria-hidden="true">2</div>
-            <div>
-              <h3 class="mechanism-step__title">Commercial desks use a separate tier</h3>
-              <p class="mechanism-step__body">
-                Airlines maintain direct relationships with approved advisors. These rates are
-                negotiated outside the public system.
-              </p>
-            </div>
-          </div>
-
-          <div class="mechanism-step">
-            <div class="mechanism-step__num" aria-hidden="true">3</div>
-            <div>
-              <h3 class="mechanism-step__title">The gap is structural, not promotional</h3>
-              <p class="mechanism-step__body">
-                Not a promo rate. Not a loyalty perk. The structural difference between retail
-                inventory and commercial desk access.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ RECENT COMPARISONS ══ -->
-    <section class="section route-section" id="routes" aria-labelledby="routes-heading">
-      <div class="container">
-        <h2 class="heading-lg text-center" id="routes-heading"
-            style="color:var(--p-slate);margin-bottom:var(--space-3);">
-          Recent Comparisons
-        </h2>
-        <div class="savings-counter-card" id="savings-counter">
-          <p class="counter-eyebrow">TOTAL SAVINGS</p>
-          <div class="counter-number" id="counter-value" aria-live="polite">$0</div>
-          <p class="counter-sub">Five completed bookings. Business class. Commercial desk vs public retail.</p>
-          <hr class="counter-divider">
-          <div class="route-lines" id="route-lines"></div>
-          <p class="counter-aggregate">Across these five completed bookings, clients kept $28,451.</p>
-        </div>
-        <p class="hide-on-mobile" style="text-align:center;margin-top:var(--space-8);">
-          <a href="#book" class="btn btn--green btn--lg">Book a 5 Minute Fare Review &rarr;</a>
-        </p>
-        <p style="text-align:center;font-size:13px;font-weight:600;color:var(--color-muted);margin-top:var(--space-3);">
-          Q4 2026 desk inventory is open. Availability narrows as departure dates approach.
-        </p>
-        <p style="text-align:center;font-size:var(--text-sm);color:var(--color-muted);margin-top:var(--space-2);line-height:var(--line-height-relaxed);">
-          Fares shown are the actual booked prices on the dates listed. Business class. Commercial desk vs public retail.
-        </p>
-      </div>
-    </section>
-
-    <!-- ══ TWO WAYS IN ══ -->
-    <section class="section two-ways-section" id="book" aria-labelledby="two-ways-heading">
-      <div class="container">
-
-        <div class="section-intro">
-          <h2 class="heading-xl" id="two-ways-heading">Send your route. Get the real fare.</h2>
-          <p class="two-ways__subhead">Miami to London, business class: $3,700 through our desk, $7,983 online. Fort Lauderdale to Nice: $3,500 through our desk, $8,698 online.</p>
         </div>
 
-        <!-- Primary: route form -->
-        <div class="two-ways__form-wrap">
-
-          <div id="route-form-banner-success" class="route-form__banner route-form__banner--success" role="status" aria-live="polite">
+        <div id="form-wrap">
+          <div class="form-banner form-banner--ok" id="form-ok" role="status" aria-live="polite">
             Got it. Emmanuel will send your commercial desk rate within one business day.
           </div>
-          <div id="route-form-banner-error" class="route-form__banner route-form__banner--error" role="alert" aria-live="assertive">
+          <div class="form-banner form-banner--fail" id="form-fail" role="alert" aria-live="assertive">
             Something went wrong. Please try again.
           </div>
 
-          <form class="route-form" id="route-form" novalidate aria-label="Send your route for a fare quote">
+          <form class="hero-form" id="hero-form" novalidate aria-label="Get your fare">
+            <noscript>
+              <p style="font-size:14px;color:var(--muted);margin-bottom:10px;">
+                <a href="mailto:hello@point2pointtravel.co?subject=Fare%20request">Email us your route</a> and we will reply with your desk rate.
+              </p>
+            </noscript>
 
-            <fieldset class="route-form__fieldset">
-              <legend class="route-form__legend">Travel details</legend>
-              <div class="route-form__field">
-                <label class="route-form__label" for="route-input">Route</label>
-                <input class="route-form__input" type="text" name="route" id="route-input"
-                       placeholder="MIA to London" autocomplete="off" aria-describedby="route-hint" maxlength="200">
-                <span class="route-form__hint" id="route-hint" aria-live="polite"></span>
+            <div>
+              <label class="form-lbl" id="chips-lbl">Your route</label>
+              <div class="chips" role="group" aria-labelledby="chips-lbl">
+                <button type="button" class="chip" data-route="Miami to London">Miami to London</button>
+                <button type="button" class="chip" data-route="Miami to Paris">Miami to Paris</button>
+                <button type="button" class="chip" data-route="Miami to Dubai">Miami to Dubai</button>
+                <button type="button" class="chip" data-route="other">Other</button>
               </div>
-              <div class="route-form__field">
-                <label class="route-form__label" for="dates-input">Approximate travel dates</label>
-                <input class="route-form__input" type="text" name="dates" id="dates-input"
-                       placeholder="Mid-October, flexible" autocomplete="off" aria-describedby="dates-hint" maxlength="200">
-                <span class="route-form__hint" id="dates-hint" aria-live="polite"></span>
+              <div class="other-wrap" id="other-wrap">
+                <input type="text" id="other-input" class="form-input" placeholder="e.g. New York to Tokyo" autocomplete="off" aria-label="Your route">
               </div>
-            </fieldset>
+            </div>
 
-            <fieldset class="route-form__fieldset">
-              <legend class="route-form__legend">Contact</legend>
-              <div class="route-form__field">
-                <label class="route-form__label" for="email-input">Email <span aria-hidden="true">*</span></label>
-                <input class="route-form__input" type="email" name="email" id="email-input"
-                       placeholder="you@company.com" required autocomplete="email"
-                       aria-required="true" aria-describedby="email-hint email-privacy" maxlength="254">
-                <span class="route-form__hint" id="email-hint" aria-live="polite"></span>
-                <span class="route-form__privacy-note" id="email-privacy">Used only to send your rate. Not shared.</span>
-              </div>
-              <div class="route-form__field">
-                <label class="route-form__label" for="name-input">Name <span aria-hidden="true">*</span></label>
-                <input class="route-form__input" type="text" name="name" id="name-input"
-                       placeholder="Your name" required autocomplete="name"
-                       aria-required="true" aria-describedby="name-hint" maxlength="100">
-                <span class="route-form__hint" id="name-hint" aria-live="polite"></span>
-              </div>
-            </fieldset>
+            <div>
+              <label class="form-lbl" for="email">Work email</label>
+              <input type="email" id="email" class="form-input" name="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
+              <span class="form-err" id="email-err">Please enter a valid work email.</span>
+            </div>
 
-            <button type="submit" class="btn btn--green btn--full route-form__submit" id="route-submit">
-              <span class="route-form__spinner" aria-hidden="true"></span>
-              <span class="route-form__submit-label">Send My Route</span>
-            </button>
-            <p class="route-form__footnote">Rate returned within one business day. No commitment, no contracts.</p>
+            <button type="submit" id="submit-btn" class="btn btn--blue btn--lg btn--full">Send my fare</button>
 
+            <p class="form-fine">Fare in your inbox within one business day. Used only to send your rate.</p>
           </form>
         </div>
 
-        <!-- Secondary: Calendly two-column -->
-        <div class="two-ways__calendly-secondary">
-          <p class="two-ways__talk-microcopy">Prefer to talk it through? Book 5 minutes with Emmanuel below.</p>
-          <div class="cal-two-col">
-            <!-- Left: event details -->
-            <div class="cal-two-col__details">
-              <img class="cal-two-col__avatar" src="/assets/emmanuel.webp" alt="Emmanuel Blum" width="64" height="64" loading="lazy">
-              <p class="cal-two-col__host">Emmanuel Blum</p>
-              <h3 class="cal-two-col__title">Book a 5 Min<br>Fare Review</h3>
-              <div class="cal-two-col__meta">
-                <span class="cal-two-col__meta-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                  5 min
-                </span>
-                <span class="cal-two-col__meta-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.56 3.44 2 2 0 0 1 3.53 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  Phone call
-                </span>
-              </div>
-              <p class="cal-two-col__desc">A direct read on whether the airline commercial desk channel would have priced your last few business class trips differently. Bring one to three recent international business class receipts.</p>
-            </div>
-            <!-- Right: calendar widget -->
-            <div class="cal-two-col__widget">
-              <div id="calendly-inline-widget"
-                   role="region"
-                   aria-label="Schedule a 5-minute fare review">
-              </div>
-              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-              <p style="text-align:center;margin-top:12px;">
-                <a href="https://calendly.com/hello-point2point/fare-review"
-                   style="font-size:13px;color:#6b7280;text-decoration:none;"
-                   onmouseover="this.style.textDecoration='underline'"
-                   onmouseout="this.style.textDecoration='none'">
-                  If the calendar does not load, book directly here →
-                </a>
-              </p>
+      </div>
+    </section>
+
+    <!-- FIVE RECENT BOOKINGS -->
+    <section class="sec" aria-labelledby="bookings-h">
+      <div class="container">
+        <h2 class="sec-h" id="bookings-h">Five recent bookings</h2>
+        <div class="bt-wrap">
+          <table class="bt">
+            <thead>
+              <tr>
+                <th>Route</th>
+                <th class="col-pub">Public</th>
+                <th>Desk</th>
+                <th>Saved</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="bt-rname">MIA &rarr; LHR</div><div class="bt-meta">Round trip &middot; Jun 2026</div></td>
+                <td class="col-pub bt-pub">$7,983</td>
+                <td>$3,700</td>
+                <td class="bt-saved">$4,283</td>
+              </tr>
+              <tr>
+                <td><div class="bt-rname">FLL &rarr; NCE</div><div class="bt-meta">One way &middot; May 2026</div></td>
+                <td class="col-pub bt-pub">$8,698</td>
+                <td>$3,500</td>
+                <td class="bt-saved">$5,198</td>
+              </tr>
+              <tr>
+                <td><div class="bt-rname">MIA &rarr; DXB</div><div class="bt-meta">Round trip &middot; Aug 2026</div></td>
+                <td class="col-pub bt-pub">$17,157</td>
+                <td>$7,000</td>
+                <td class="bt-saved">$10,157</td>
+              </tr>
+              <tr>
+                <td><div class="bt-rname">MIA &rarr; GIG</div><div class="bt-meta">One way &middot; Sep 2026</div></td>
+                <td class="col-pub bt-pub">$4,950</td>
+                <td>$2,100</td>
+                <td class="bt-saved">$2,850</td>
+              </tr>
+              <tr>
+                <td><div class="bt-rname">MIA &rarr; CDG</div><div class="bt-meta">One way &middot; Jan 2026</div></td>
+                <td class="col-pub bt-pub">$9,363</td>
+                <td>$3,400</td>
+                <td class="bt-saved">$5,963</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bt-total">
+          <span class="bt-total__lbl">Total saved</span>
+          <span class="bt-total__amt">$28,451</span>
+        </div>
+        <p class="bt-note">Historical bookings at the actual prices paid, on the dates shown.</p>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="sec sec--alt" aria-labelledby="how-h">
+      <div class="container">
+        <h2 class="sec-h" id="how-h">How it works</h2>
+        <div class="steps">
+          <div class="step"><div class="step-n" aria-hidden="true">1</div><div class="step-t">Send your route.</div></div>
+          <div class="step"><div class="step-n" aria-hidden="true">2</div><div class="step-t">We check the desk.</div></div>
+          <div class="step"><div class="step-n" aria-hidden="true">3</div><div class="step-t">You get the fare.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="sec" aria-labelledby="trust-h">
+      <div class="container">
+        <div class="trust-grid">
+
+          <div class="trust-person">
+            <img src="/assets/emmanuel.webp" alt="Emmanuel Blum" class="trust-photo" width="68" height="68">
+            <div>
+              <div class="trust-name">Emmanuel Blum</div>
+              <div class="trust-title">Point2Point Travel</div>
             </div>
           </div>
-        </div>
 
-      </div>
-    </section>
+          <!-- CLIENT QUOTE — approved quote with name and company: insert here when ready -->
 
-    <!-- ══ AFFILIATIONS BAR ══ -->
-    <section class="affiliations-bar" aria-label="Trusted partners and accreditations">
-      <div class="container">
-        <p class="affiliations-bar__label">Trusted partners and accreditations</p>
-        <div class="affiliations-bar__logos">
-          <img src="/assets/logos/virtuoso.webp"     alt="Virtuoso member"                width="219" height="70" loading="lazy">
-          <img src="/assets/logos/iata.webp"          alt="IATA accredited"                width="210" height="70" loading="lazy">
-          <img src="/assets/logos/sabre.webp"          alt="Sabre partner"                  width="245" height="70" loading="lazy">
-          <img src="/assets/logos/stars.webp"          alt="STARS partner"                  width="158" height="70" loading="lazy">
-          <img src="/assets/logos/four-seasons.webp"   alt="Four Seasons Preferred Partner" width="118" height="70" loading="lazy">
+          <div class="trust-logos" aria-label="Trusted partners and accreditations">
+            <img src="/assets/logos/virtuoso.webp" alt="Virtuoso member" loading="lazy" width="auto" height="32">
+            <img src="/assets/logos/iata.webp" alt="IATA accredited" loading="lazy" width="auto" height="32">
+            <img src="/assets/logos/sabre.webp" alt="Sabre partner" loading="lazy" width="auto" height="32">
+            <img src="/assets/logos/stars.webp" alt="STARS partner" loading="lazy" width="auto" height="32">
+            <img src="/assets/logos/four-seasons.webp" alt="Four Seasons Preferred Partner" loading="lazy" width="auto" height="32">
+          </div>
+
         </div>
       </div>
     </section>
 
-
-    <!-- ══ S4 FAQ ══ -->
-    <section class="section faq-section" aria-labelledby="faq-heading">
+    <!-- HONEST ANSWERS -->
+    <section class="sec sec--alt" aria-labelledby="faq-h">
       <div class="container">
-        <div class="section-intro">
-          <h2 class="heading-xl" id="faq-heading">Honest answers</h2>
-        </div>
-        <div class="faq-wrap">
+        <h2 class="sec-h" id="faq-h">Honest answers</h2>
+        <div class="faq-list">
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq1">
               <span>Are your prices all-inclusive?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer" id="faq-answer-1" role="region">
-              <div class="faq-answer-inner">
+            <div class="faq-ans" id="faq1" role="region">
+              <div class="faq-ans-in">
                 Yes. Your quote includes all taxes and fees. What we confirm is what you pay.
                 Optional add-ons are only charged if you specifically request them first.
               </div>
@@ -1291,12 +423,12 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq2">
               <span>What if I need to change or cancel my flight?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer" id="faq-answer-2" role="region">
-              <div class="faq-answer-inner">
+            <div class="faq-ans" id="faq2" role="region">
+              <div class="faq-ans-in">
                 We manage all adjustments for you. We identify the best solution based on fare type
                 and advocate to minimize disruption, including on last-minute changes.
               </div>
@@ -1304,14 +436,15 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq3">
               <span>What if I need after-hours support?</span>
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
-            <div class="faq-answer" id="faq-answer-3" role="region">
-              <div class="faq-answer-inner">
+            <div class="faq-ans" id="faq3" role="region">
+              <div class="faq-ans-in">
                 For immediate support outside business hours, call our main line at (212)&nbsp;470-5029
-                or<br>email airteam@point2point.com. Messages are received promptly and responded to directly.
+                or email <a href="mailto:hello@point2pointtravel.co">hello@point2pointtravel.co</a>.
+                Messages are received promptly and responded to directly.
               </div>
             </div>
           </div>
@@ -1320,423 +453,186 @@
       </div>
     </section>
 
-    <!-- ══ S5 DUAL CTA ══ -->
-    <section class="dual-cta" aria-labelledby="cta-heading">
+    <!-- CLOSING -->
+    <section class="closing" id="closing" aria-labelledby="closing-h">
       <div class="container">
-        <h2 class="dual-cta__headline" id="cta-heading">Ready to see your routes?</h2>
-        <div class="dual-cta__buttons">
-          <a href="#book" class="btn btn--green btn--lg">
-            Book a 5 Minute Fare Review &rarr;
+        <h2 class="closing-h" id="closing-h">Your route. The real fare.</h2>
+        <a href="#form-wrap" class="btn btn--yellow btn--lg">Send my fare</a>
+        <div class="closing-links">
+          <a href="https://calendly.com/5-min-fare-review/5min-fare-review" class="closing-link" id="cal-link">
+            Prefer a call? Book 5 minutes
           </a>
+          <a href="tel:+12124705029" class="closing-link" id="closing-phone">(212) 470-5029</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ══ FOOTER ══ -->
-  <footer class="site-footer--dark" role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-pill logo-pill--sm">
-            <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="38">
-          </span>
-        </div>
-        <div class="footer-right">
-          <span>&copy; 2026</span>
-          <span class="footer-sep">&middot;</span>
-          <a href="/privacy.html">Privacy</a>
-        </div>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-in">
+      <img src="https://point2pointtravel.co/assets/logos/p2p-logo.png" alt="Point2Point Travel" height="36" width="auto">
+      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+        <span>&copy; 2026 Point2Point Travel</span>
+        <a href="/privacy.html">Privacy</a>
       </div>
     </div>
   </footer>
 
-  <!-- Sticky mobile CTA -->
-  <div class="sticky-mobile-cta">
-    <a href="#book" class="btn btn--green btn--full">
-      Book a 5 Minute Fare Review &rarr;
-    </a>
+  <!-- Sticky bar (mobile only, shows after form scrolls out) -->
+  <div class="sticky-bar hidden" id="sticky-bar" role="complementary">
+    <a href="#form-wrap" class="btn btn--blue btn--lg btn--full">Send my fare</a>
   </div>
 
   <!-- FAQ accordion -->
   <script>
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.closest('.faq-item');
-        const answer = item.querySelector('.faq-answer');
-        const isOpen = item.classList.contains('is-open');
-
-        if (isOpen) {
-          answer.style.height = answer.scrollHeight + 'px';
-          requestAnimationFrame(() => {
-            answer.style.height = '0px';
-          });
-          item.classList.remove('is-open');
-          button.setAttribute('aria-expanded', 'false');
+    document.querySelectorAll('.faq-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var item=btn.closest('.faq-item');
+        var ans=item.querySelector('.faq-ans');
+        var open=item.classList.contains('open');
+        if(open){
+          ans.style.height=ans.scrollHeight+'px';
+          requestAnimationFrame(function(){ans.style.height='0px';});
+          item.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
         } else {
-          answer.style.height = answer.scrollHeight + 'px';
-          item.classList.add('is-open');
-          button.setAttribute('aria-expanded', 'true');
-          answer.addEventListener('transitionend', () => {
-            if (item.classList.contains('is-open')) {
-              answer.style.height = 'auto';
-            }
-          }, { once: true });
+          ans.style.height=ans.scrollHeight+'px';
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+          ans.addEventListener('transitionend',function(){
+            if(item.classList.contains('open'))ans.style.height='auto';
+          },{once:true});
         }
       });
     });
   </script>
 
-  <!-- Savings counter animation -->
+  <!-- Sticky bar visibility -->
   <script>
-    (function () {
-      var el = document.getElementById('counter-value');
-      if (!el) return;
-      var target = 28451;
-      var duration = 5000;
-      var hasRun = false;
-
-      function easeOutQuad(t) { return t * (2 - t); }
-      function fmt(n) { return '$' + Math.floor(n).toLocaleString('en-US'); }
-
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        el.textContent = fmt(target);
-        return;
-      }
-
-      function runAnimation() {
-        if (hasRun) return;
-        hasRun = true;
-        var start = performance.now();
-        function tick(now) {
-          var progress = Math.min((now - start) / duration, 1);
-          el.textContent = fmt(easeOutQuad(progress) * target);
-          if (progress < 1) requestAnimationFrame(tick);
-          else el.textContent = fmt(target);
-        }
-        requestAnimationFrame(tick);
-      }
-
-      var card = document.getElementById('savings-counter');
-      if ('IntersectionObserver' in window && card) {
-        new IntersectionObserver(function (entries) {
-          if (entries[0].isIntersecting) runAnimation();
-        }, { threshold: 0.3 }).observe(card);
-      } else {
-        runAnimation();
-      }
+    (function(){
+      var bar=document.getElementById('sticky-bar');
+      var wrap=document.getElementById('form-wrap');
+      if(!bar||!wrap)return;
+      new IntersectionObserver(function(e){
+        if(e[0].isIntersecting){bar.classList.add('hidden');}
+        else{bar.classList.remove('hidden');}
+      },{threshold:0}).observe(wrap);
     })();
   </script>
 
-  <script src="https://point2pointtravel.co/shared/tracking.js"></script>
+  <!-- Form + tracking -->
   <script>
-    setupCalendlySuccessListener('proof', 27401802);
+    (function(){
+      var params=new URLSearchParams(window.location.search);
+      var utmC=params.get('utm_campaign')||sessionStorage.getItem('utm_campaign')||'';
+      var utmCo=params.get('utm_content')||sessionStorage.getItem('utm_content')||'';
+      if(params.get('utm_campaign'))sessionStorage.setItem('utm_campaign',utmC);
+      if(params.get('utm_content'))sessionStorage.setItem('utm_content',utmCo);
 
-    window.addEventListener('message', function(e) {
-      if (e.data && e.data.event === 'calendly.event_scheduled') {
-        gtag('event', 'calendly_booking', { 'event_category': 'conversion' });
-      }
-    });
-  </script>
-
-  <script>
-  (function () {
-    /* ── Route data — single source of truth ── */
-    var ROUTES = [
-      { market: 'mia', name: 'MIA → LHR', cabin: 'Business', type: 'Round trip', date: 'Jun 2026', retail: 7983,  desk: 3700, saved: 4283 },
-      { market: 'mia', name: 'FLL → NCE', cabin: 'Business', type: 'One way',    date: 'May 2026', retail: 8698,  desk: 3500, saved: 5198 },
-      { market: 'mia', name: 'MIA → DXB', cabin: 'Business', type: 'Round trip', date: 'Aug 2026', retail: 17157, desk: 7000, saved: 10157 },
-      { market: 'mia', name: 'MIA → GIG', cabin: 'Business', type: 'One way',    date: 'Sep 2026', retail: 4950,  desk: 2100, saved: 2850 },
-      { market: 'mia', name: 'MIA → CDG', cabin: 'Business', type: 'One way',    date: 'Jan 2026', retail: 9363,  desk: 3400, saved: 5963 },
-    ];
-
-    /* ── UTM: read from URL, persist to sessionStorage ── */
-    var params = new URLSearchParams(window.location.search);
-    var utmCampaign = params.get('utm_campaign') || sessionStorage.getItem('utm_campaign') || '';
-    var utmContent  = params.get('utm_content')  || sessionStorage.getItem('utm_content')  || '';
-    if (params.get('utm_campaign')) sessionStorage.setItem('utm_campaign', utmCampaign);
-    if (params.get('utm_content'))  sessionStorage.setItem('utm_content',  utmContent);
-
-    /* Detect market from campaign or content */
-    var market = null;
-    var lower = (utmCampaign + ' ' + utmContent).toLowerCase();
-    if (lower.indexOf('sfo') !== -1) market = 'sfo';
-    else if (lower.indexOf('mia') !== -1) market = 'mia';
-
-    /* ── GA4 helper ── */
-    function fire(eventName, extra) {
-      if (typeof window.gtag !== 'function') return;
-      var p = Object.assign({ utm_campaign: utmCampaign, utm_content: utmContent }, extra || {});
-      window.gtag('event', eventName, p);
-    }
-
-    /* ── Render route lines ── */
-    function fmtMoney(n) { return '$' + Number(n).toLocaleString('en-US'); }
-
-    var sorted = ROUTES.slice();
-    if (market) {
-      sorted.sort(function (a, b) {
-        return (a.market === market ? 0 : 1) - (b.market === market ? 0 : 1);
-      });
-    }
-
-    var linesEl = document.getElementById('route-lines');
-    if (linesEl) {
-      linesEl.innerHTML = sorted.map(function (r) {
-        return '<div class="route-line">' +
-          '<div class="route-line__info">' +
-            '<span class="route-line__name">' + r.name + '</span>' +
-            '<span class="route-line__meta">' + r.cabin + ' &middot; ' + r.type + ' &middot; ' + r.date + '</span>' +
-          '</div>' +
-          '<span class="route-line__public">' + fmtMoney(r.retail) + '</span>' +
-          '<span class="route-line__our">' + fmtMoney(r.desk) + '</span>' +
-          '<span class="savings-badge">−' + fmtMoney(r.saved) + '</span>' +
-          '</div>';
-      }).join('');
-    }
-
-    /* ── Dynamic heading ── */
-    var headingEl = document.getElementById('routes-heading');
-    if (headingEl) {
-      headingEl.textContent = 'Recent Miami Area Bookings';
-    }
-
-    /* ── Route form: pre-fill ── */
-    var routeInput = document.getElementById('route-input');
-    if (routeInput && market) {
-      var prefix = market === 'sfo' ? 'SFO to ' : 'MIA to ';
-      routeInput.value = prefix;
-      routeInput.addEventListener('focus', function () {
-        var len = this.value.length;
-        this.setSelectionRange(len, len);
-      }, { once: true });
-    }
-
-    /* ── Input sanitization ── */
-    function sanitize(str) {
-      return String(str).trim().replace(/[<>"'`]/g, '');
-    }
-
-    /* ── Inline validation helpers ── */
-    function setFieldState(inputEl, hintEl, state, msg) {
-      if (state === 'error') {
-        inputEl.setAttribute('aria-invalid', 'true');
-        hintEl.textContent = msg;
-        hintEl.className = 'route-form__hint route-form__hint--error';
-      } else if (state === 'success') {
-        inputEl.setAttribute('aria-invalid', 'false');
-        hintEl.textContent = '';
-        hintEl.className = 'route-form__hint route-form__hint--success';
-      } else {
-        inputEl.removeAttribute('aria-invalid');
-        hintEl.textContent = '';
-        hintEl.className = 'route-form__hint';
-      }
-    }
-
-    function clearFieldState(inputEl, hintEl) {
-      setFieldState(inputEl, hintEl, 'clear');
-    }
-
-    /* Validate required fields on blur */
-    var fields = [
-      { id: 'email-input', hint: 'email-hint', required: true,
-        validate: function(v) {
-          if (!v) return 'Email is required.';
-          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Please enter a valid email address.';
-          return null;
-        }
-      },
-      { id: 'name-input', hint: 'name-hint', required: true,
-        validate: function(v) {
-          if (!v) return 'Name is required.';
-          return null;
-        }
-      },
-    ];
-
-    fields.forEach(function(f) {
-      var inputEl = document.getElementById(f.id);
-      var hintEl  = document.getElementById(f.hint);
-      if (!inputEl || !hintEl) return;
-      inputEl.addEventListener('blur', function() {
-        var val = sanitize(inputEl.value);
-        var err = f.validate(val);
-        if (err) setFieldState(inputEl, hintEl, 'error', err);
-        else if (val) setFieldState(inputEl, hintEl, 'success', '');
-        else clearFieldState(inputEl, hintEl);
-      });
-      inputEl.addEventListener('input', function() {
-        if (inputEl.getAttribute('aria-invalid') === 'true') {
-          var val = sanitize(inputEl.value);
-          var err = f.validate(val);
-          if (!err) setFieldState(inputEl, hintEl, 'success', '');
-        }
-      });
-    });
-
-    /* ── GA4: route_form_view ── */
-    var formEl = document.getElementById('route-form');
-    var formViewFired = false;
-    if (formEl && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting && !formViewFired) {
-          formViewFired = true;
-          fire('route_form_view');
-        }
-      }, { threshold: 0.3 }).observe(formEl);
-    }
-
-    /* ── GA4: route_form_start ── */
-    var formStartFired = false;
-    if (formEl) {
-      formEl.addEventListener('focusin', function () {
-        if (!formStartFired) {
-          formStartFired = true;
-          fire('route_form_start');
-        }
-      });
-    }
-
-    /* ── Form submission ── */
-    if (formEl) {
-      var submitBtn   = document.getElementById('route-submit');
-      var submitLabel = submitBtn && submitBtn.querySelector('.route-form__submit-label');
-      var spinner     = submitBtn && submitBtn.querySelector('.route-form__spinner');
-      var bannerOk    = document.getElementById('route-form-banner-success');
-      var bannerErr   = document.getElementById('route-form-banner-error');
-
-      function setLoading(on) {
-        submitBtn.disabled = on;
-        if (spinner) spinner.style.display = on ? 'block' : 'none';
-        if (submitLabel) submitLabel.textContent = on ? 'Sending…' : 'Send My Route';
-        submitBtn.classList.toggle('is-loading', on);
+      function fire(n,x){
+        if(typeof window.gtag!=='function')return;
+        window.gtag('event',n,Object.assign({utm_campaign:utmC,utm_content:utmCo},x||{}));
       }
 
-      function showBanner(type) {
-        if (bannerOk) bannerOk.style.display = type === 'success' ? 'block' : 'none';
-        if (bannerErr) bannerErr.style.display = type === 'error'   ? 'block' : 'none';
-        if (type === 'success' && bannerOk) bannerOk.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        if (type === 'error'   && bannerErr) bannerErr.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+      /* Chips */
+      var selRoute='';
+      var chips=document.querySelectorAll('.chip');
+      var otherWrap=document.getElementById('other-wrap');
+      var otherInput=document.getElementById('other-input');
+      var started=false;
 
-      formEl.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        /* Client-side validation */
-        var valid = true;
-        fields.forEach(function(f) {
-          var inputEl = document.getElementById(f.id);
-          var hintEl  = document.getElementById(f.hint);
-          if (!inputEl || !hintEl) return;
-          var val = sanitize(inputEl.value);
-          var err = f.validate(val);
-          if (err) { setFieldState(inputEl, hintEl, 'error', err); valid = false; }
-        });
-        if (!valid) {
-          var firstErr = formEl.querySelector('[aria-invalid="true"]');
-          if (firstErr) firstErr.focus();
-          return;
-        }
-
-        /* Build sanitized payload */
-        var payload = {
-          route:        sanitize(document.getElementById('route-input').value),
-          dates:        sanitize(document.getElementById('dates-input').value),
-          email:        sanitize(document.getElementById('email-input').value),
-          name:         sanitize(document.getElementById('name-input').value),
-          utm_campaign: utmCampaign,
-          utm_content:  utmContent,
-        };
-
-        setLoading(true);
-        if (bannerOk) bannerOk.style.display = 'none';
-        if (bannerErr) bannerErr.style.display = 'none';
-
-        fetch('/submit', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        })
-        .then(function (res) {
-          if (!res.ok) throw new Error('server');
-          fire('route_form_submit', { route: payload.route });
-          setLoading(false);
-          formEl.style.display = 'none';
-          showBanner('success');
-        })
-        .catch(function () {
-          setLoading(false);
-          showBanner('error');
-        });
-      });
-    }
-
-    /* ── GA4: calendly_cta_click ── */
-    document.querySelectorAll('a[href="#book"]').forEach(function (el) {
-      el.addEventListener('click', function () {
-        fire('calendly_cta_click', {
-          button_label: (el.textContent || '').trim(),
-          cta_location: (el.closest('section') && el.closest('section').id) || 'header'
-        });
-      });
-    });
-
-  })();
-  </script>
-
-  <script>
-    (function () {
-      var CALENDLY_URL = 'https://calendly.com/hello-point2point/fare-review?hide_event_type_details=1&hide_gdpr_banner=1';
-      var el = document.getElementById('calendly-inline-widget');
-      var loaded = false;
-      function reinit() {
-        if (loaded || !el) return;
-        loaded = true;
-        if (window.Calendly) {
-          el.innerHTML = '';
-          Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: el });
-        } else {
-          var s = document.createElement('script');
-          s.src = 'https://assets.calendly.com/assets/external/widget.js';
-          s.onload = function () {
-            Calendly.initInlineWidget({ url: CALENDLY_URL, parentElement: el });
-          };
-          document.head.appendChild(s);
-        }
-      }
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function (entries) {
-          if (entries[0].isIntersecting) { obs.disconnect(); reinit(); }
-        }, { rootMargin: '200px' });
-        obs.observe(el);
-      } else {
-        window.addEventListener('load', function () { setTimeout(reinit, 100); });
-      }
-    })();
-  </script>
-
-  <script>
-    /* Fix broken affiliation logos — serve local copies instead of missing main-site assets */
-    (function () {
-      var LOGO_BASE = '/assets/logos/';
-      var LOGOS = ['virtuoso.webp', 'iata.webp', 'sabre.webp', 'stars.webp', 'four-seasons.webp'];
-      function patchLogos() {
-        document.querySelectorAll('img[src*="/assets/logos/"]').forEach(function (img) {
-          var file = img.src.split('/assets/logos/').pop();
-          if (LOGOS.indexOf(file) > -1 && (!img.complete || img.naturalWidth === 0)) {
-            img.src = LOGO_BASE + file;
+      chips.forEach(function(c){
+        c.addEventListener('click',function(){
+          chips.forEach(function(x){x.classList.remove('is-sel');});
+          c.classList.add('is-sel');
+          var v=c.dataset.route;
+          if(v==='other'){
+            otherWrap.style.display='block';
+            otherInput.focus();
+            selRoute='';
+          } else {
+            otherWrap.style.display='none';
+            selRoute=v;
           }
+          if(!started){started=true;fire('form_start');}
         });
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', patchLogos);
-      } else {
-        patchLogos();
-      }
-      /* Also catch late-rendered logos (shared component may inject after DOMContentLoaded) */
-      setTimeout(patchLogos, 1500);
+      });
+
+      otherInput&&otherInput.addEventListener('input',function(){selRoute=otherInput.value.trim();});
+
+      /* Email */
+      var emailEl=document.getElementById('email');
+      var emailErr=document.getElementById('email-err');
+      function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
+
+      emailEl&&emailEl.addEventListener('focus',function(){
+        if(!started){started=true;fire('form_start');}
+      });
+      emailEl&&emailEl.addEventListener('blur',function(){
+        if(emailEl.value&&!validEmail(emailEl.value)){
+          emailEl.classList.add('err');emailErr.classList.add('show');
+        } else {
+          emailEl.classList.remove('err');emailErr.classList.remove('show');
+        }
+      });
+
+      /* Submit */
+      var form=document.getElementById('hero-form');
+      var btn=document.getElementById('submit-btn');
+      var okBanner=document.getElementById('form-ok');
+      var failBanner=document.getElementById('form-fail');
+
+      form&&form.addEventListener('submit',function(e){
+        e.preventDefault();
+        var email=emailEl?emailEl.value.trim():'';
+        var route=selRoute||(otherInput?otherInput.value.trim():'');
+        if(!validEmail(email)){
+          emailEl.classList.add('err');emailErr.classList.add('show');emailEl.focus();return;
+        }
+        emailEl.classList.remove('err');emailErr.classList.remove('show');
+        btn.disabled=true;btn.textContent='Sending...';
+        failBanner.classList.remove('show');
+
+        fetch('/submit',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({
+            name:'',email:email,route:route,dates:'',
+            utm_campaign:utmC,utm_content:utmCo,
+            page:'proof',submitted_at:new Date().toISOString()
+          })
+        })
+        .then(function(r){
+          if(!r.ok)throw new Error();
+          fire('form_submit',{route:route});
+          form.style.display='none';
+          okBanner.classList.add('show');
+        })
+        .catch(function(){
+          btn.disabled=false;btn.textContent='Send my fare';
+          failBanner.classList.add('show');
+        });
+      });
+
+      /* scroll_50 */
+      var s50=false;
+      window.addEventListener('scroll',function(){
+        if(!s50&&window.scrollY/(document.body.scrollHeight-window.innerHeight)>=.5){
+          s50=true;fire('scroll_50');
+        }
+      },{passive:true});
+
+      /* phone_tap */
+      document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+        el.addEventListener('click',function(){fire('phone_tap');});
+      });
+
+      /* call_link_click */
+      document.querySelectorAll('a[href*="calendly"]').forEach(function(el){
+        el.addEventListener('click',function(){fire('call_link_click');});
+      });
+
     })();
   </script>
 
