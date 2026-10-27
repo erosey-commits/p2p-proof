@@ -103,6 +103,8 @@
     .form-banner.show{display:block}
     .form-banner--ok{background:#ECFDF5;color:var(--green);border:1px solid #A7F3D0}
     .form-banner--fail{background:#FEF2F2;color:#B91C1C;border:1px solid #FECACA}
+    .ok-call,.fail-mail{display:flex;align-items:center;min-height:44px;margin-top:6px;font-size:15px;font-weight:600;color:var(--blue)}
+    .fail-mail{color:#B91C1C}
 
     /* Sections */
     .sec{padding:52px var(--px)}
@@ -248,19 +250,19 @@
           <div class="fare-card" aria-label="Sample booking: Miami to London">
             <div class="fare-card__bar">Recent booking</div>
             <div class="fare-card__body">
-              <div class="fare-card__route">Miami to London</div>
-              <div class="fare-card__meta">MIA&ndash;LHR &middot; Round trip &middot; Business &middot; Jun 2026</div>
+              <div class="fare-card__route" id="fc-route">Miami to London</div>
+              <div class="fare-card__meta" id="fc-meta">MIA&ndash;LHR &middot; Round trip &middot; Business &middot; Jun 2026</div>
               <div class="fare-card__row">
                 <span class="fare-card__lbl">Public fare</span>
-                <span class="fare-card__public">$7,983</span>
+                <span class="fare-card__public" id="fc-pub">$7,983</span>
               </div>
               <div class="fare-card__row">
                 <span class="fare-card__lbl">Point2Point Travel desk</span>
-                <span class="fare-card__desk">$3,700</span>
+                <span class="fare-card__desk" id="fc-desk">$3,700</span>
               </div>
               <div class="fare-card__row">
                 <span class="fare-card__lbl">You keep</span>
-                <span class="fare-card__saved">$4,283</span>
+                <span class="fare-card__saved" id="fc-saved">$4,283</span>
               </div>
             </div>
           </div>
@@ -269,9 +271,11 @@
         <div id="form-wrap">
           <div class="form-banner form-banner--ok" id="form-ok" role="status" aria-live="polite">
             Got it. Emmanuel will email your fare within one business day.
+            <a href="https://calendly.com/5-min-fare-review/5min-fare-review" class="ok-call" id="ok-cal-link" target="_blank" rel="noopener">Want it faster? Book 5 minutes with Emmanuel.</a>
           </div>
           <div class="form-banner form-banner--fail" id="form-fail" role="alert" aria-live="assertive">
             Something went wrong. Please try again.
+            <a href="mailto:emmanuel@point2pointtravel.co?subject=Fare%20request" class="fail-mail">Or email Emmanuel your route.</a>
           </div>
 
           <form class="hero-form" id="hero-form" novalidate aria-label="Get your fare" action="mailto:emmanuel@point2pointtravel.co" method="post" enctype="text/plain">
@@ -592,6 +596,31 @@
 
       otherInput&&otherInput.addEventListener('input',function(){selRoute=otherInput.value.trim();});
 
+      /* Route-matched landing */
+      var FARES={
+        lhr:{chip:'Miami to London',title:'Miami to London',code:'MIA&ndash;LHR',trip:'Round trip',month:'Jun 2026',pub:'$7,983',desk:'$3,700',saved:'$4,283'},
+        cdg:{chip:'Miami to Paris',title:'Miami to Paris',code:'MIA&ndash;CDG',trip:'One way',month:'Jan 2026',pub:'$9,363',desk:'$3,400',saved:'$5,963'},
+        dxb:{chip:'Miami to Dubai',title:'Miami to Dubai',code:'MIA&ndash;DXB',trip:'Round trip',month:'Aug 2026',pub:'$17,157',desk:'$7,000',saved:'$10,157'},
+        gig:{other:'Miami to Rio',title:'Miami to Rio',code:'MIA&ndash;GIG',trip:'One way',month:'Sep 2026',pub:'$4,950',desk:'$2,100',saved:'$2,850'},
+        nce:{other:'Fort Lauderdale to Nice',title:'Fort Lauderdale to Nice',code:'FLL&ndash;NCE',trip:'One way',month:'May 2026',pub:'$8,698',desk:'$3,500',saved:'$5,198'}
+      };
+      var rp=(params.get('route')||'').toLowerCase();
+      var routeParam=FARES.hasOwnProperty(rp)?rp:'';
+      if(routeParam){
+        var f=FARES[routeParam];
+        document.getElementById('fc-route').textContent=f.title;
+        document.getElementById('fc-meta').innerHTML=f.code+' &middot; '+f.trip+' &middot; Business &middot; '+f.month;
+        document.getElementById('fc-pub').textContent=f.pub;
+        document.getElementById('fc-desk').textContent=f.desk;
+        document.getElementById('fc-saved').textContent=f.saved;
+        document.querySelector('.fare-card').setAttribute('aria-label','Sample booking: '+f.title);
+        var target=document.querySelector('.chip[data-route="'+(f.other?'other':f.chip)+'"]');
+        chips.forEach(function(x){x.classList.remove('is-sel');});
+        target.classList.add('is-sel');
+        if(f.other){otherWrap.style.display='block';otherInput.value=f.other;selRoute=f.other;}
+        else{selRoute=f.chip;}
+      }
+
       /* Email */
       var emailEl=document.getElementById('email');
       var emailErr=document.getElementById('email-err');
@@ -632,18 +661,21 @@
         btn.disabled=true;btn.textContent='Sending...';
         failBanner.classList.remove('show');
 
-        fetch('/submit',{
+        fetch('/api/fare-request',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify({
-            name:'',email:email,route:route,dates:'',
-            utm_campaign:utmC,utm_content:utmCo,
-            page:'proof',submitted_at:new Date().toISOString()
+            email:email,route:route,routeParam:routeParam,
+            utm_source:utmS,utm_campaign:utmC,utm_content:utmCo,page:'proof'
           })
         })
         .then(function(r){
           if(!r.ok)throw new Error();
-          fire('form_submit',{route:route});
+          return r.json();
+        })
+        .then(function(d){
+          fire('form_submit',{route:route,utm_campaign:utmC});
+          if(d&&d.li&&typeof window.lintrk==='function')window.lintrk('track',{conversion_id:Number(d.li)});
           form.style.display='none';
           okBanner.classList.add('show');
         })
