@@ -18,6 +18,10 @@ function rateLimited(ip) {
   return recent.length > LIMIT;
 }
 
+export function onRequestGet({ env }) {
+  return json(200, { v: 4, token: Boolean(env.AIRTABLE_TOKEN), li: Boolean(env.LI_CONVERSION_ID), webhook: Boolean(env.AIRTABLE_FORM_WEBHOOK) });
+}
+
 export async function onRequestPost(context) {
   try {
     return await handle(context);
