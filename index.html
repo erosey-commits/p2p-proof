@@ -113,9 +113,10 @@
 
     /* Bookings table */
     .bt-wrap{overflow-x:auto}
-    .bt{width:100%;border-collapse:collapse;font-size:15px;table-layout:fixed}
+    .bt{width:100%;border-collapse:collapse;font-size:15px}
+    @media(min-width:600px){.bt{table-layout:fixed}.bt th:first-child{width:34%}}
     .bt th{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:0 0 12px;text-align:center;border-bottom:1px solid var(--border)}
-    .bt th:first-child{text-align:left;width:34%}
+    .bt th:first-child{text-align:left}
     .bt td{padding:13px 0;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle}
     .bt th.col-p2p{color:var(--blue);background:#FDF3D7;border-radius:8px 8px 0 0;padding:10px 10px 12px;line-height:1.2}
     .bt td.col-p2p{background:#FDF3D7;padding:13px 10px;font-weight:800;color:var(--navy);font-size:17px}
