@@ -178,6 +178,8 @@
     .sticky-bar.hidden{display:none!important}
   </style>
 
+  <script>window.dataLayer=window.dataLayer||[];dataLayer.push({site_section:'proof'});</script>
+
   <!-- UTM Capture -->
   <script src="https://point2pointtravel.co/shared/utm-capture.js" defer></script>
 
@@ -553,9 +555,13 @@
       var utmCo=params.get('utm_content')||sessionStorage.getItem('utm_content')||'';
       if(params.get('utm_campaign'))sessionStorage.setItem('utm_campaign',utmC);
       if(params.get('utm_content'))sessionStorage.setItem('utm_content',utmCo);
+      var utmS=params.get('utm_source')||sessionStorage.getItem('utm_source')||'';
+      var utmM=params.get('utm_medium')||sessionStorage.getItem('utm_medium')||'';
+      if(params.get('utm_source'))sessionStorage.setItem('utm_source',utmS);
+      if(params.get('utm_medium'))sessionStorage.setItem('utm_medium',utmM);
 
       function fire(n,x){
-        var p=Object.assign({utm_campaign:utmC,utm_content:utmCo},x||{});
+        var p=Object.assign({site_section:'proof',utm_source:utmS,utm_medium:utmM,utm_campaign:utmC,utm_content:utmCo},x||{});
         if(window.zaraz&&typeof window.zaraz.track==='function')window.zaraz.track(n,p);
       }
 
