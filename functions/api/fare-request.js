@@ -19,7 +19,7 @@ function rateLimited(ip) {
 }
 
 export function onRequestGet({ env }) {
-  return json(200, { v: 4, token: Boolean(env.AIRTABLE_TOKEN), li: Boolean(env.LI_CONVERSION_ID), webhook: Boolean(env.AIRTABLE_FORM_WEBHOOK) });
+  return json(200, { v: 5, token: Boolean(env.AIRTABLE_TOKEN), li: Boolean(env.LI_CONVERSION_ID), webhook: Boolean(env.AIRTABLE_FORM_WEBHOOK) });
 }
 
 export async function onRequestPost(context) {
@@ -60,32 +60,41 @@ async function handle(context) {
     Page: s(body.page, 50) || 'proof',
   };
 
-  const token = String(env.AIRTABLE_TOKEN || '').trim();
-  if (!token) return json(500, { ok: false, error: 'missing_token' });
-
-  const res = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ records: [{ fields }], typecast: true }),
-  });
-  if (!res.ok) {
+  const storeRecord = async () => {
+    const token = String(env.AIRTABLE_TOKEN || '').trim();
+    if (!token) return 'missing_token';
+    const res = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ records: [{ fields }], typecast: true }),
+    });
+    if (res.ok) return 'ok';
     console.error('Airtable API error', res.status, await res.text());
-    return json(500, { ok: false, error: 'store_failed', upstream: res.status });
-  }
+    return `airtable_${res.status}`;
+  };
 
-  if (env.AIRTABLE_FORM_WEBHOOK) {
-    context.waitUntil(
-      fetch(env.AIRTABLE_FORM_WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: '', email, route, dates: '',
-          utm_campaign: fields['UTM Campaign'], utm_content: fields['UTM Content'],
-          page: 'proof', submitted_at: now,
-        }),
-      }).catch((err) => console.error('Notification webhook failed', err))
-    );
-  }
+  const notify = async () => {
+    if (!env.AIRTABLE_FORM_WEBHOOK) return 'missing_webhook';
+    const res = await fetch(env.AIRTABLE_FORM_WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: '', email, route, dates: '',
+        utm_campaign: fields['UTM Campaign'], utm_content: fields['UTM Content'],
+        page: 'proof', submitted_at: now,
+      }),
+    });
+    return res.ok ? 'ok' : `webhook_${res.status}`;
+  };
 
-  return json(200, { ok: true, li: env.LI_CONVERSION_ID || '' });
+  const [stored, notified] = await Promise.all([
+    storeRecord().catch((e) => `store_${e.name}`),
+    notify().catch((e) => `notify_${e.name}`),
+  ]);
+  if (stored !== 'ok') console.error('Fare Requests write skipped', stored);
+  if (notified !== 'ok') console.error('Lead notification failed', notified);
+
+  // A lead only fails if neither path recorded it.
+  if (stored !== 'ok' && notified !== 'ok') return json(500, { ok: false, error: 'not_recorded', stored, notified });
+  return json(200, { ok: true, stored, notified, li: env.LI_CONVERSION_ID || '' });
 }
