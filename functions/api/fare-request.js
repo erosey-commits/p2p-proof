@@ -18,7 +18,17 @@ function rateLimited(ip) {
   return recent.length > LIMIT;
 }
 
-export async function onRequestPost({ request, env, waitUntil }) {
+export async function onRequestPost(context) {
+  try {
+    return await handle(context);
+  } catch (err) {
+    console.error('fare-request crashed', err);
+    return json(500, { ok: false, error: 'server_error', detail: String(err && err.name) });
+  }
+}
+
+async function handle(context) {
+  const { request, env } = context;
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   if (rateLimited(ip)) return json(429, { ok: false, error: 'rate_limited' });
 
@@ -46,9 +56,12 @@ export async function onRequestPost({ request, env, waitUntil }) {
     Page: s(body.page, 50) || 'proof',
   };
 
+  const token = String(env.AIRTABLE_TOKEN || '').trim();
+  if (!token) return json(500, { ok: false, error: 'missing_token' });
+
   const res = await fetch(`https://api.airtable.com/v0/${BASE_ID}/${TABLE_ID}`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${env.AIRTABLE_TOKEN}`, 'Content-Type': 'application/json' },
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ records: [{ fields }], typecast: true }),
   });
   if (!res.ok) {
@@ -57,7 +70,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   }
 
   if (env.AIRTABLE_FORM_WEBHOOK) {
-    waitUntil(
+    context.waitUntil(
       fetch(env.AIRTABLE_FORM_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
