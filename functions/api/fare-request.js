@@ -53,7 +53,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   });
   if (!res.ok) {
     console.error('Airtable API error', res.status, await res.text());
-    return json(502, { ok: false, error: 'store_failed' });
+    return json(500, { ok: false, error: 'store_failed', upstream: res.status });
   }
 
   if (env.AIRTABLE_FORM_WEBHOOK) {
